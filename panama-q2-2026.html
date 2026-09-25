@@ -67,7 +67,7 @@ h1,h2,h3{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif;text-w
 section{margin-top:56px}
 .sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
 .sec-head h2{font-size:clamp(26px,3.2vw,34px);font-weight:700;display:flex;align-items:baseline;gap:14px}
-.sec-n{font:600 .6em/1 "Bricolage Grotesque",sans-serif;color:var(--bar);letter-spacing:.02em;flex:none}
+.sec-n{font:700 1em/1 "Bricolage Grotesque",sans-serif;color:var(--bar);letter-spacing:-.01em;flex:none}
 .fig{font:500 12px/1 "Figtree",system-ui,sans-serif;color:var(--muted)}
 .lead{color:var(--ink-2);max-width:68ch;margin:0 0 20px}
 .grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start}
@@ -112,6 +112,9 @@ tr.hi td{font-weight:600}
 @media (max-width:980px){.factors{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.factors{grid-template-columns:1fr}}
 .factor{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.factor{position:relative}
+.ficon{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:10px;background:var(--chip);color:var(--bar-hi);display:grid;place-items:center}
+.ficon svg{width:18px;height:18px}
 .factor .tag{font:500 11px/1 "Figtree",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .factor h3{font-size:17px;font-weight:700;line-height:1.2}
 .factor .v{font:800 34px/1 "Bricolage Grotesque",sans-serif;color:var(--accent);letter-spacing:-.01em}
@@ -268,11 +271,11 @@ tr.hi td{font-weight:600}
     <div class="sec-head"><h2><span class="sec-n">03</span>Factores estructurales del crecimiento</h2></div>
     <p class="lead">El desempeño económico acelerado responde a una confluencia de factores internos y externos favorables:</p>
     <div class="factors">
-      <div class="factor"><span class="tag">Logística</span><h3>Recuperación logística regional</h3><div class="v num">+17%</div><div class="vl">ingresos</div><p>Canal, puertos, Tocumén y transporte con capacidades elevadas. +5,2% tránsitos, +17% ingresos ($4,802M/9 meses).</p></div>
-      <div class="factor"><span class="tag">Turismo</span><h3>Dinamismo del turismo</h3><div class="v num">1,8M</div><div class="vl">visitantes hasta julio</div><p>1,8M visitantes hasta julio (+dos dígitos). Mejor primer semestre de la década. Q1: 1,1M turistas generaron B/.2,636.7M (+15,1%).</p></div>
-      <div class="factor"><span class="tag">Agro</span><h3>Recuperación agrícola</h3><div class="v num">+9,6%</div><div class="vl">en agricultura</div><p>Condiciones climáticas favorables y demanda internacional sostenida. +9,6% en agricultura.</p></div>
-      <div class="factor"><span class="tag">Inversión</span><h3>Expansión de inversión</h3><div class="v num">+43,5%</div><div class="vl">inversión privada en construcción</div><p>Construcción +43,5% inversión privada. 112,552 nuevos empleos (+20,5%).</p></div>
-      <div class="factor"><span class="tag">Precios</span><h3>Estabilidad de precios</h3><div class="v num">0,9%</div><div class="vl">inflación</div><p>Inflación controlada a 0,9% mediante subsidios energéticos y políticas consistentes.</p></div>
+      <div class="factor"><span class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0"/><path d="M4 15l-1-4h18l-2 4"/><path d="M6 11V7h8v4"/><path d="M10 7V4"/></svg></span><span class="tag">Logística</span><h3>Recuperación logística regional</h3><div class="v num">+17%</div><div class="vl">ingresos</div><p>Canal, puertos, Tocumén y transporte con capacidades elevadas. +5,2% tránsitos, +17% ingresos ($4,802M/9 meses).</p></div>
+      <div class="factor"><span class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></span><span class="tag">Turismo</span><h3>Dinamismo del turismo</h3><div class="v num">1,8M</div><div class="vl">visitantes hasta julio</div><p>1,8M visitantes hasta julio (+dos dígitos). Mejor primer semestre de la década. Q1: 1,1M turistas generaron B/.2,636.7M (+15,1%).</p></div>
+      <div class="factor"><span class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12C12 7.5 8.5 4 3.5 4c0 4.5 3.5 8 8.5 8z"/><path d="M12 14.5c0-4 3-7 8.5-7 0 4-3.5 7-8.5 7z"/></svg></span><span class="tag">Agro</span><h3>Recuperación agrícola</h3><div class="v num">+9,6%</div><div class="vl">en agricultura</div><p>Condiciones climáticas favorables y demanda internacional sostenida. +9,6% en agricultura.</p></div>
+      <div class="factor"><span class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span><span class="tag">Inversión</span><h3>Expansión de inversión</h3><div class="v num">+43,5%</div><div class="vl">inversión privada en construcción</div><p>Construcción +43,5% inversión privada. 112,552 nuevos empleos (+20,5%).</p></div>
+      <div class="factor"><span class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span class="tag">Precios</span><h3>Estabilidad de precios</h3><div class="v num">0,9%</div><div class="vl">inflación</div><p>Inflación controlada a 0,9% mediante subsidios energéticos y políticas consistentes.</p></div>
     </div>
     <div class="panel" style="margin-top:20px">
       <h3>Gráfico 4: Factores estructurales convergentes</h3>
