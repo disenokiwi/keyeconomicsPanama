@@ -1,0 +1,437 @@
+<title>Panamá Q2 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f3fa; --surface:#ffffff; --ink:#18191f; --ink-2:#4a4760; --muted:#7a7690;
+  --line:#e2ddef; --grid:#ebe7f4;
+  --bar:#8d61ff; --bar-hi:#542ab1; --accent:#ca43e9; --ref:#18191f;
+  --chip:#eee6ff; --chip-ink:#542ab1; --good:#4d6b00; --good-bg:#eef7cf;
+  --hero-bg:#201061; --hero-ink:#ffffff; --hero-muted:#cdb0ff; --hero-num:#cde368;
+  --pink-bg:#fbe9ff; --olive-line:#9fb83a; --area:#8d61ff2e;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#101116; --surface:#18191f; --ink:#f1eefb; --ink-2:#c4bfd8; --muted:#8e89a6;
+    --line:#2b2a38; --grid:#24232f;
+    --bar:#8d61ff; --bar-hi:#cdb0ff; --accent:#cd7fff; --ref:#e5e5e5;
+    --chip:#2a1f4d; --chip-ink:#dbc7ff; --good:#c6f587; --good-bg:#26301a;
+    --hero-bg:#201061; --hero-ink:#ffffff; --hero-muted:#cdb0ff; --hero-num:#cde368;
+    --pink-bg:#2e1838; --olive-line:#c6f587; --area:#8d61ff40;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101116; --surface:#18191f; --ink:#f1eefb; --ink-2:#c4bfd8; --muted:#8e89a6;
+  --line:#2b2a38; --grid:#24232f;
+  --bar:#8d61ff; --bar-hi:#cdb0ff; --accent:#cd7fff; --ref:#e5e5e5;
+  --chip:#2a1f4d; --chip-ink:#dbc7ff; --good:#c6f587; --good-bg:#26301a;
+  --hero-bg:#201061; --hero-ink:#ffffff; --hero-muted:#cdb0ff; --hero-num:#cde368;
+  --pink-bg:#2e1838; --olive-line:#c6f587; --area:#8d61ff40;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.6 "Figtree",system-ui,-apple-system,sans-serif;padding-inline:16px;padding-block:0}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif;text-wrap:balance;margin:0}
+.mono,.num{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font:500 12px/1 "Figtree",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);border-radius:0 0 20px 20px;padding:40px clamp(20px,4vw,48px) 36px;margin-inline:-16px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end;position:relative;overflow:hidden}
+@media (min-width:1112px){.hero{margin-inline:0}}
+.hero::after{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#ca43e955 0%,#8d61ff22 45%,transparent 70%);pointer-events:none}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;pointer-events:none;z-index:0}
+@media (prefers-reduced-motion:reduce){.hero-video{display:none}}
+.hero .eyebrow{color:var(--hero-muted)}
+.hero h1{font-size:clamp(28px,4.2vw,44px);line-height:1.08;font-weight:700;margin-top:14px}
+@media (min-width:761px){.hero h1{width:155%;max-width:880px}}
+.hero p{color:#dcd3f5;max-width:60ch;margin:16px 0 0}
+.big{position:relative;z-index:1;text-align:right}
+.big .n{font:800 clamp(88px,14vw,160px)/.85 "Bricolage Grotesque",sans-serif;color:var(--hero-num);letter-spacing:-.03em}
+.big .n small{font-size:.45em;margin-left:4px}
+.big .cap{font:500 13px/1.4 "Figtree",system-ui,sans-serif;color:var(--hero-muted);margin-top:10px}
+@media (max-width:760px){.hero{grid-template-columns:1fr}.big{text-align:left}}
+
+/* KPI strip */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:28px}
+.kpi{background:var(--surface);padding:18px 18px 16px;display:flex;flex-direction:column;gap:6px}
+.kpi .v{font:700 30px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+.kpi .l{font-size:13px;color:var(--ink-2);line-height:1.35}
+.delta{align-self:flex-start;font:500 12px/1 "Figtree",system-ui,sans-serif;padding:5px 7px;border-radius:6px;background:var(--good-bg);color:var(--good)}
+.delta.neutral{background:var(--chip);color:var(--chip-ink)}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.kpi:last-child{grid-column:1/-1}}
+
+/* Sections */
+section{margin-top:56px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
+.sec-head h2{font-size:clamp(22px,2.6vw,28px);font-weight:700}
+.fig{font:500 12px/1 "Figtree",system-ui,sans-serif;color:var(--muted)}
+.lead{color:var(--ink-2);max-width:68ch;margin:0 0 20px}
+.grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.panel h3{font-size:16px;font-weight:600;font-family:"Figtree",sans-serif;margin-bottom:4px}
+.panel .sub{font-size:13px;color:var(--muted);margin-bottom:12px}
+.chart{width:100%;overflow-x:auto}
+.chart svg{display:block;width:100%;height:auto;min-width:320px}
+.chart text{font-family:"IBM Plex Mono",monospace;fill:var(--muted);font-size:12px}
+.chart .vlabel{fill:var(--ink);font-weight:500;font-size:13px}
+.chart .cat{fill:var(--ink-2);font-family:"Figtree",sans-serif;font-size:13px}
+.chart .mark{transition:opacity .15s}
+.chart svg:hover .mark{opacity:.55}
+.chart svg .mark:hover{opacity:1}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font:500 11px/1.2 "Figtree",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 8px 10px 0;border-bottom:1px solid var(--line)}
+td{padding:10px 8px 10px 0;border-bottom:1px solid var(--grid);vertical-align:top}
+td.r,th.r{text-align:right;padding-right:0}
+tr.hi td{font-weight:600}
+
+/* Sector notes */
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media (max-width:860px){.notes{grid-template-columns:1fr}}
+.note{padding:16px 0 0;border-top:2px solid var(--bar)}
+.note .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.note h3{font-size:16px;font-weight:600;font-family:"Figtree",sans-serif}
+.note .pct{font:700 22px/1 "Bricolage Grotesque",sans-serif;color:var(--bar-hi)}
+.note p{margin:8px 0 0;font-size:14px;color:var(--ink-2)}
+
+/* Logistics tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--chip);border-radius:12px;padding:16px}
+.tile .v{font:700 26px/1.05 "Bricolage Grotesque",sans-serif;color:var(--chip-ink)}
+.tile .l{font-size:13px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+
+/* Factors */
+.factors{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media (max-width:980px){.factors{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.factors{grid-template-columns:1fr}}
+.factor{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.factor .tag{font:500 11px/1 "Figtree",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.factor h3{font-size:17px;font-weight:700;line-height:1.2}
+.factor .v{font:800 34px/1 "Bricolage Grotesque",sans-serif;color:var(--accent);letter-spacing:-.01em}
+.factor .vl{font-size:12px;color:var(--muted);margin-top:-4px}
+.factor p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+
+.sources{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);font-size:11.5px;line-height:1.45;color:var(--muted)}
+.sources .eyebrow{font-size:10.5px}
+.sources ul{margin:8px 0 0;padding-left:16px;columns:2;column-gap:28px}
+.sources li{margin-bottom:3px;break-inside:avoid}
+@media (max-width:700px){.sources ul{columns:1}}
+.foot{margin-top:24px;font:500 12px/1.4 "Figtree",system-ui,sans-serif;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font:500 12px/1.4 "Figtree",system-ui,sans-serif;padding:7px 9px;border-radius:6px;opacity:0;transition:opacity .1s;z-index:10;max-width:240px}
+
+/* Marca */
+.brands{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+.brand{display:block;height:28px;width:auto}
+.brand-kw{display:block;height:50px;width:auto;margin-left:-8px}
+.brand-sep{width:1px;height:28px;background:#ffffff40}
+.site-foot{margin:56px -16px 0;background:#050505 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTkyMCAxNDkuNTkiPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAzMC44LjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuNCBCdWlsZCAxKSAgLS0+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5zdDAgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5zdDEgewogICAgICAgIGZpbGw6ICMwNTA1MDU7CiAgICAgIH0KCiAgICAgIC5zdDIgewogICAgICAgIGZpbGw6IHVybCgjT3JjaGlkXzYpOwogICAgICB9CgogICAgICAuc3QzIHsKICAgICAgICBmaWxsOiB1cmwoI09yY2hpZF81KTsKICAgICAgfQoKICAgICAgLnN0NCB7CiAgICAgICAgZmlsbDogdXJsKCNPcmNoaWRfNjEpOwogICAgICB9CgogICAgICAuc3Q1IHsKICAgICAgICBjbGlwLXBhdGg6IHVybCgjY2xpcHBhdGgpOwogICAgICB9CiAgICA8L3N0eWxlPgogICAgPGNsaXBQYXRoIGlkPSJjbGlwcGF0aCI+CiAgICAgIDxyZWN0IGNsYXNzPSJzdDAiIHg9Ii00OS41MyIgeT0iLTEuNzkiIHdpZHRoPSIxMTU4LjIxIiBoZWlnaHQ9IjE1MS4zOCIvPgogICAgPC9jbGlwUGF0aD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iT3JjaGlkXzYiIGRhdGEtbmFtZT0iT3JjaGlkIDYiIHgxPSI3NjQzLjQxIiB5MT0iMzg4OC45NCIgeDI9Ijc5MDkuOTQiIHkyPSIzODg4Ljk0IiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0zNTMyLjk5MzggNzkyNy4yNzEpIHJvdGF0ZSgtOTApIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2FmMWRjMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii40OSIgc3RvcC1jb2xvcj0iI2FmMWRjMiIgc3RvcC1vcGFjaXR5PSIuNDciLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuODQiIHN0b3AtY29sb3I9IiNhZjFkYzIiIHN0b3Atb3BhY2l0eT0iLjEzIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2FmMWRjMiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJPcmNoaWRfNjEiIGRhdGEtbmFtZT0iT3JjaGlkIDYiIHgxPSI3NjY5LjciIHkxPSI0MTkyLjU4IiB4Mj0iNzczMS44MyIgeTI9IjQxOTIuNTgiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM4MzYuNjM0OSA3ODIwLjc0NzUpIHJvdGF0ZSgtOTApIiB4bGluazpocmVmPSIjT3JjaGlkXzYiLz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iT3JjaGlkXzUiIGRhdGEtbmFtZT0iT3JjaGlkIDUiIHgxPSI3NDUyLjc3IiB5MT0iNDE5Mi41OCIgeDI9Ijc4ODcuNTMiIHkyPSI0MTkyLjU4IiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKC0zODM2LjYzNDkgNzgyMC43NDc1KSByb3RhdGUoLTkwKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNiMDI5YzIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuNDkiIHN0b3AtY29sb3I9IiNiMDI5YzIiIHN0b3Atb3BhY2l0eT0iLjQ3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjg0IiBzdG9wLWNvbG9yPSIjYjAyOWMyIiBzdG9wLW9wYWNpdHk9Ii4xMyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNiMDI5YzIiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3QgY2xhc3M9InN0MSIgeD0iMCIgeT0iMCIgd2lkdGg9IjE5MjEuMDgiIGhlaWdodD0iMTUxLjM4Ii8+CiAgPGcgY2xhc3M9InN0NSI+CiAgICA8Zz4KICAgICAgPGNpcmNsZSBjbGFzcz0ic3QyIiBjeD0iMzU1Ljk1IiBjeT0iMTUwLjYiIHI9IjEzMy4yNiIvPgogICAgICA8cGF0aCBjbGFzcz0ic3Q0IiBkPSJNMjkzLjgyLDE1MS4wNWMwLTM0LjMxLDI3LjgxLTYyLjEzLDYyLjEzLTYyLjEzczYyLjEzLDI3LjgxLDYyLjEzLDYyLjEzIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0xMzguNTcsMTUwLjZjMCwxMjAuMDUsOTcuMzIsMjE3LjM4LDIxNy4zOCwyMTcuMzhzMjE3LjM4LTk3LjMyLDIxNy4zOC0yMTcuMzgtOTcuMzItMjE3LjM4LTIxNy4zOC0yMTcuMzhTMTM4LjU3LDMwLjU0LDEzOC41NywxNTAuNlpNNDg3Ljg5LDE1MC42YzAsNzIuODctNTkuMDcsMTMxLjk0LTEzMS45NCwxMzEuOTRzLTEzMS45NC01OS4wNy0xMzEuOTQtMTMxLjk0UzI4My4wOCwxOC42NiwzNTUuOTUsMTguNjZzMTMxLjk0LDU5LjA3LDEzMS45NCwxMzEuOTRaIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4=") left bottom/cover no-repeat;color:#e5e5e5}
+.site-foot .in{max-width:1080px;margin:0 auto;min-height:76px;padding:14px 16px 14px 34%;display:flex;align-items:center;justify-content:flex-end;gap:14px 28px;flex-wrap:wrap}
+.site-foot .logos{display:flex;align-items:center;gap:22px}
+.site-foot .logos img{display:block;width:auto}
+.site-foot .kw{height:40px}
+.site-foot .ke{height:22px}
+.site-foot .sep{width:1px;height:24px;background:#ffffff40}
+.site-foot small{font:500 12.5px/1.3 "Figtree",system-ui,sans-serif;color:#cfcbe0}
+@media (max-width:700px){.site-foot .in{padding-left:16px;justify-content:center;background:#050505b3}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<style>
+.sector{margin-top:28px}
+.sector-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-top:2px solid var(--bar);padding-top:14px}
+.sector-head h3{font-size:19px;font-weight:700}
+.sector-head .pct{font:700 24px/1 "Bricolage Grotesque",sans-serif;color:var(--bar-hi)}
+.sector p{margin:10px 0 0;color:var(--ink-2);max-width:72ch}
+.sector .grid2{margin-top:16px}
+.synth{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+.synth li{padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.synth b{font-weight:600}
+.bigtiles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.dash{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px}
+@media (max-width:640px){.bigtiles,.dash{grid-template-columns:1fr}}
+.bigtile{border:2px solid var(--bar);background:var(--chip);border-radius:12px;padding:28px 16px;text-align:center;display:flex;flex-direction:column;gap:12px}
+.bigtile .v{font:800 clamp(40px,6vw,64px)/1 "Bricolage Grotesque",sans-serif;color:var(--bar-hi);letter-spacing:-.02em}
+.bigtile .l{font-weight:600;font-size:14px;color:var(--ink);line-height:1.35}
+.bigtile.alt{border-color:var(--accent);background:var(--pink-bg)}
+.bigtile.alt .v{color:var(--accent)}
+.bigtile.alt2{border-color:var(--olive-line);background:var(--good-bg)}
+.bigtile.alt2 .v{color:var(--good)}
+.dash .bigtile .v{font-size:clamp(36px,4.5vw,52px)}
+</style>
+<div class="wrap">
+  <header class="hero">
+    <video class="hero-video" src="panama-hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div style="position:relative;z-index:1">
+      <div class="brands">
+        <img class="brand-kw" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzODguMTggMTcwLjMzIj4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjkuMy4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjAgQnVpbGQgMTUxKSAgLS0+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5zdDAgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNzQuNTksODQuNTljMS4wMi0yLjYsMi41MS00LjksNC40MS02LjgzLjQ4LS40OS45OC0uOTQsMS41MS0xLjM4bC42Ny0yLjE5aC0xMS44bC00LjE4LDE1LjU0Yy0uMjUuNzgtLjQ1LDEuNTktLjYyLDIuNDItLjE3LjgzLS4zNiwxLjYxLS41NSwyLjM1LS4yLjg4LS4zOSwxLjc0LS41OSwyLjU3aC0uMTVjLS4yLS44My0uMzktMS42OS0uNTktMi41Ny0uMi0uNzMtLjM5LTEuNTQtLjU5LTIuNDItLjItLjg4LS4zOS0xLjczLS41OS0yLjU3bC00LjExLTE1LjMyaC0xMC4xMmwtMy45NiwxNS4zMmMtLjI1LjgzLS40NywxLjY3LS42NiwyLjUzLS4yLjg2LS4zNywxLjY1LS41MSwyLjM4bC0uNTEsMi41N2gtLjE1Yy0uMTUtLjc4LS4zMi0xLjYxLS41MS0yLjQ5LS4xNS0uNzMtLjMzLTEuNTEtLjU1LTIuMzUtLjIyLS44My0uNDMtMS42NC0uNjItMi40MmwtMy42LTE0LjExLTYuMzksMTguNzMsNS4yMywxNy4zN2gxMS4wN2w0LjQ3LTE3LjAxYy4xOS0uNzMuNC0xLjQ5LjYyLTIuMjcuMjItLjc4LjQtMS41MS41NS0yLjIuMTktLjc4LjM3LTEuNTQuNTEtMi4yN2guMTVjLjE1LjczLjMyLDEuNDkuNTEsMi4yNy4xNS42OS4zLDEuNDIuNDgsMi4yLjE3Ljc4LjM4LDEuNTQuNjIsMi4yN2w0LjQsMTcuMDFoMTEuMjJsNC4wMi0xMy4xMWMtLjQyLTEuNzctLjY0LTMuNjQtLjY0LTUuNTgsMC0zLjAyLjUyLTUuODYsMS41NC04LjQ1WiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMzcuMjEsNzcuOHYtMy44OWMtLjQ0LS4xOS0xLjIyLS4yOS0yLjM1LS4yOS0yLjMsMC00LjI1LjUxLTUuODYsMS41NC0xLjYxLDEuMDMtMy4wOCwyLjY2LTQuNCw0LjkxaC0uMjJ2LTUuODZoLTExLjQ0djYuODljLjY5LDEuMSwxLjI4LDIuMjYsMS43NywzLjUxLDEuMDIsMi41OSwxLjU0LDUuNDMsMS41NCw4LjQ1cy0uNTIsNS44Ni0xLjU0LDguNDVjLS40OSwxLjI0LTEuMDgsMi40MS0xLjc3LDMuNTF2Ni43NGgxMS45NXYtMTYuODZjMC00LjExLDEuMDktNy4wNSwzLjI2LTguODMsMS4zNS0xLjEsMi45OC0xLjc2LDQuOS0xLjk3Ljc4LTEuODgsMS43OC0zLjU1LDIuOTYtNC45OC4zOC0uNDUuNzctLjg4LDEuMTktMS4yOVoiLz4KICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzM3LjIxLDc5LjY0Yy0uMDcuMDgtLjE1LjE3LS4yMi4yNS0uOTksMS4xOS0xLjgzLDIuNTYtMi41Miw0LjA5LDAsMCwuMDIsMCwuMDIsMCIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMzQuNDksODMuOThzLS4wMiwwLS4wMiwwYy0uMTIuMjYtLjIzLjUyLS4zNC43OS0uMS4yNi0uMi41Mi0uMy43OC0uMDcuMi0uMTUuNC0uMjEuNjEtLjgxLDIuNDQtMS4yMSw1LjEzLTEuMjEsOC4wNiwwLDMuMTMuNCw1LjkzLDEuMjEsOC4zOS44MSwyLjQ3LDEuOTQsNC41NiwzLjQxLDYuMjcsMS40NywxLjcxLDMuMiwzLjAyLDUuMiwzLjkyLDIsLjksNC4yLDEuMzYsNi42LDEuMzZzNC42OC0uNTUsNi41Ni0xLjY1YzEuODgtMS4xLDMuMzgtMi42Myw0LjUxLTQuNThoLjE1djYuNTFoMTEuNDR2LTU5Ljc4Yy02LjYsMC0xMS45NSw1LjM1LTExLjk1LDExLjk1djEzLjFoLS4yMmMtMS4xMi0xLjU2LTIuNDktMi44NS00LjExLTMuODUtMS42MS0xLTMuNzQtMS41LTYuMzgtMS41LTIuNDQsMC00LjY3LjQ5LTYuNjcsMS40Ny0xLjI0LjYxLTIuMzcsMS4zNi0zLjQsMi4yNS0uMjcuMjMtLjUyLjQ4LS43OC43My0uMjcuMjctLjUyLjU1LS43OC44NE0zNTcuNzQsMTAxLjc4Yy0xLjM5LDEuOTYtMy4zNCwyLjkzLTUuODMsMi45My0yLjM1LDAtNC4xNy0uOTUtNS40Ni0yLjg2LTEuMy0xLjkxLTEuOTQtNC41LTEuOTQtNy43N3MuNjYtNS43NSwxLjk4LTcuNzNjMS4zMi0xLjk4LDMuMTgtMi45Nyw1LjU3LTIuOTcsMS4zMiwwLDIuNDYuMjcsMy40MS44MS45NS41NCwxLjc2LDEuMjgsMi40MiwyLjI0LjY2Ljk1LDEuMTUsMi4xLDEuNDcsMy40NS4zMiwxLjM0LjQ4LDIuOC40OCw0LjM2LDAsMy4wOC0uNyw1LjYtMi4wOSw3LjU1WiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03My42NywyOC4yNWMtMzEuNTQsMC01Ny4wNCwyNS42Mi01Ny4wNCw1Ny4xMXMyNS41LDU3LjIxLDU3LjA0LDU3LjIxYzIwLjQ0LDAsMzguMzgtNy40OCw0OC40LTIzLjc4VjUyLjA2Yy0xMC4wMi0xNi4yNS0yNy45NS0yMy44MS00OC40LTIzLjgxWk00Ny43MSwxMDUuMzRjLTkuMjUsMC0xNi44Ny03LjQ0LTE2Ljg3LTE2LjkxczcuNjEtMTYuOTEsMTYuODctMTYuOTEsMTYuODcsNy41OSwxNi44NywxNi45MS03LjQxLDE2LjkxLTE2Ljg3LDE2LjkxWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNjUuNzgsNzQuMjZsLTEzLjc4LS4wNS0xMS4xOSwxMi42NC4wNi0xNi43NmMuMDMtNy41MS00LjY3LTE0LjIzLTExLjc0LTE2Ljc3bC0uMjUsNTkuMzNoMTEuODJsLjA2LTEyLjQ2LDMuNi0zLjgsOS4xMSwxNS4zOWgxMi42bC0xMy41NS0yMy41LDEzLjI0LTE0LjAzWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOTIuOTEsNzcuNzljLTEuNjEtMS40Ny0zLjQ4LTIuNjEtNS42MS0zLjQ1LTIuMTMtLjgzLTQuNTMtMS4yNS03LjIyLTEuMjUtMi44OCwwLTUuNS41LTcuODQsMS41LTIuMzUsMS00LjM3LDIuNC02LjA4LDQuMTgtMS43MSwxLjc4LTMuMDMsMy44OS0zLjk2LDYuMy0uOTMsMi40Mi0xLjM5LDUuMDItMS4zOSw3Ljgxcy40Niw1LjQ3LDEuMzksNy45MmMuOTMsMi40NCwyLjI1LDQuNTYsMy45Niw2LjM0LDEuNzEsMS43OCwzLjgxLDMuMTgsNi4zLDQuMTgsMi40OSwxLDUuMjgsMS41LDguMzYsMS41LDIuMzksMCw0LjU2LS4yOSw2LjQ5LS44OCwxLjkzLS41OSwzLjY4LTEuNDQsNS4yNC0yLjU3LDEuNjYtMS4xMiwzLjAzLTIuNDYsNC4xMS00LDEuMDctMS41NCwxLjgxLTMuMTYsMi4yLTQuODhoLTExLjY2Yy0uNTQsMS4xNy0xLjMyLDIuMDktMi4zNSwyLjc1LTEuMDMuNjYtMi4zMi45OS0zLjg5Ljk5LTIuNDksMC00LjQyLS43My01Ljc5LTIuMi0xLjM3LTEuNDctMi4yNS0zLjQ3LTIuNjQtNi4wMWgyNi45OGMuMDUtMy44MS0uNDgtNy4yOS0xLjU4LTEwLjQ1LTEuMS0zLjE1LTIuNzctNS43NS01LjAyLTcuODFaTTE3Mi42MSw4OC45NGMuMzktMi4yNSwxLjItNC4wMywyLjQyLTUuMzUsMS4yMi0xLjMyLDIuOTgtMS45OCw1LjI4LTEuOTgsMS45NSwwLDMuNTcuNjYsNC44NCwxLjk4LDEuMjcsMS4zMiwyLjAzLDMuMSwyLjI3LDUuMzVoLTE0LjgxWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMTQuNzEsOTMuMDRjMC0yLjgzLS40OC01LjQ2LTEuNDMtNy44OC0uMS0uMjYtLjIxLS41Mi0uMzMtLjc4LS4yNC0uNTQtLjUtMS4wNi0uNzgtMS41Ni0uMjQtLjQ0LS41LS44Ny0uNzgtMS4yOC0uNjQtLjk2LTEuMzUtMS44Ni0yLjE1LTIuNjktMS43NC0xLjc4LTMuODQtMy4xOC02LjMtNC4xOC0yLjQ3LTEtNS4yMi0xLjUtOC4yNS0xLjUtLjAxLDAtLjAyLDAtLjA0LDBzLS4wMiwwLS4wNCwwYy0zLjAzLDAtNS43OC41LTguMjUsMS41LTIuNDcsMS00LjU3LDIuNC02LjMsNC4xOC0uOC44My0xLjUyLDEuNzItMi4xNSwyLjY5LS4yNy40MS0uNTMuODQtLjc4LDEuMjgtLjI4LjUtLjU0LDEuMDItLjc4LDEuNTYtLjExLjI2LS4yMi41MS0uMzMuNzgtLjk1LDIuNDItMS40Myw1LjA1LTEuNDMsNy44OCwwLDIuMzkuMzQsNC42MiwxLjAyLDYuNzEsMCwuMDIuMDIuMDUuMDIuMDcuMTIuMzcuMjUuNzMuMzksMS4wOS4xLjI2LjIxLjUyLjMzLjc4LDAsMCwwLDAsMCwuMDEuMDkuMTkuMTguMzguMjcuNTcuMDQuMDguMDguMTcuMTIuMjUuMDguMTYuMTcuMzIuMjUuNDguMDQuMDguMDguMTYuMTIuMjQuMDEuMDIuMDMuMDQuMDQuMDcuMjEuMzcuNDIuNzMuNjUsMS4wOC4wMy4wNC4wNS4wOS4wOC4xNC42NC45NiwxLjM1LDEuODYsMi4xNSwyLjY4LDEuNzQsMS43OCwzLjg0LDMuMTgsNi4zLDQuMTgsMi40NywxLDUuMjIsMS41LDguMjUsMS41LjAxLDAsLjAyLDAsLjA0LDBzLjAyLDAsLjA0LDBjMy4wMywwLDUuNzgtLjUsOC4yNS0xLjUsMi40Ny0xLDQuNTctMi4zOSw2LjMtNC4xOC44LS44MywxLjUyLTEuNzIsMi4xNS0yLjY4LjAzLS4wNC4wNS0uMDkuMDgtLjE0LjIzLS4zNS40NS0uNzEuNjUtMS4wOC4wMS0uMDIuMDMtLjA0LjA0LS4wNy4wNC0uMDguMDgtLjE2LjEyLS4yNC4wOS0uMTYuMTctLjMyLjI1LS40OC4wNC0uMDguMDgtLjE3LjEyLS4yNS4wOS0uMTkuMTgtLjM4LjI3LS41NywwLDAsMCwwLDAtLjAxLjExLS4yNi4yMi0uNTEuMzMtLjc4LjE0LS4zNi4yNy0uNzMuMzktMS4wOSwwLS4wMi4wMi0uMDUuMDItLjA3LjExLS4zNC4yMS0uNjguMy0xLjAyLDAtLjAyLjAxLS4wNS4wMi0uMDdoMGMuNDYtMS43OC43LTMuNjUuNy01LjYyWk0yOTkuOTgsMTAwLjg3Yy0xLjE4LDEuODUtMi45MSwyLjc2LTUuMjgsMi43Ni0uMDEsMC0uMDIsMC0uMDQsMC0yLjM2LDAtNC4wOS0uOTEtNS4yOS0yLjc2LTEuMjYtMS45NC0xLjg5LTQuNTctMS44OS03Ljgzcy42NC01LjksMS44OS03Ljg3YzEuMi0xLjg3LDIuOTMtMi43OCw1LjI4LTIuNzkuMDEsMCwuMDIsMCwuMDQsMCwyLjM3LDAsNC4xLjkxLDUuMjgsMi43OSwxLjIzLDEuOTcsMS44Niw0LjYxLDEuODYsNy44N3MtLjYzLDUuODktMS44Niw3LjgzWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMzQuMzMsNzQuMmMtNy4wNSwwLTEzLjI5LDQuNTctMTUuNDIsMTEuMjlsLTEuNDgsNC42OWMtLjI5LjkzLS41NywxLjkxLS44NCwyLjkzLS4yNywxLjAzLS41MiwxLjk2LS43NywyLjc5LS4xOS43Ni0uMzgsMS41Mi0uNTcsMi4yOS0uMTktLjc2LS4zOC0xLjUyLS41Ny0yLjI5LS4yNS0uODMtLjUtMS43Ni0uNzctMi43OS0uMjctMS4wMy0uNTUtMi0uODQtMi45M2wtMS40OC00LjY5Yy0yLjEzLTYuNzItOC4zNy0xMS4yOS0xNS40Mi0xMS4yOWgtLjc2bDExLjA3LDI4Ljg4Yy43OCwyLDEuMzYsMy41OSwxLjcyLDQuNzYuMzcsMS4xNy41NSwyLjE4LjU1LDMuMDEsMCwxLjI3LS4zOCwyLjI1LTEuMTQsMi45My0uNzYuNjgtMi4wMiwxLjAzLTMuNzgsMS4wM2gtNC4xMXY5LjMxaDcuNzdjMS45MSwwLDMuNTctLjIxLDQuOTktLjYyLDEuNDItLjQyLDIuNjgtMS4wOSwzLjc4LTIuMDIsMS4xLS45MywyLjA5LTIuMTUsMi45Ny0zLjY3Ljg4LTEuNTIsMS42OS0zLjM3LDIuNDItNS41N2wzLjUyLTEwLjMyLDkuOTQtMjcuNzNoLS43NloiLz4KPC9zdmc+" alt="Keyword">
+        <span class="brand-sep" aria-hidden="true"></span>
+        <img class="brand" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMDMuNDggNTYuODciPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAzMC44LjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuNCBCdWlsZCAxKSAgLS0+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5zdDAgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5zdDEgewogICAgICAgIGZpbGw6ICMwMDc5ZmY7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTc4Ljc1LDQwLjE3aC01LjUybC03LjYxLTkuNjJ2OS42MmgtNC40M1YxMS45OGg0LjQzdjE2LjgzbDcuMTMtOS4wMmg1LjExbC03Ljg1LDkuNjYsOC43NCwxMC43MVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05Ny4yMiwzMS43MWgtMTUuMWMuNTYsMy4xLDIuNzQsNC45NSw1LjY0LDQuOTUsMi4yOSwwLDMuNjYtMS4wOSw0LjM5LTIuMTNoNC41OWMtMS4xMywyLjk0LTQuNDcsNi4xMi04Ljk0LDYuMTItNS42NCwwLTEwLjExLTQuNjMtMTAuMTEtMTAuNjdzNC41OS0xMC42NywxMC4wNy0xMC42Nyw5LjcsNC40Myw5LjcsMTAuMjNjMCwuOTctLjEyLDEuNzMtLjI0LDIuMTdaTTgyLjEzLDI4LjM3aDExLjAzYy0uNDgtMy4wMi0yLjY2LTUuMDctNS4zOS01LjA3cy01LjA3LDEuOTctNS42NCw1LjA3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTExMi43MiwxOS43OWg0LjU1bC04LjQ1LDIxLjVjLTEuOTMsNC44Ny0zLjg2LDYuMzItNi40NCw2LjMyLS45MywwLTEuNjktLjItMi4xNy0uNHYtNC4wM2MuNC4yLjg1LjI4LDEuMzcuMjgsMS41MywwLDIuNTQtLjY0LDMuMjYtMi41NGwuNDgtMS4yOS04LjAxLTE5Ljg1aDQuNzVsNS40MywxNC40NSw1LjIzLTE0LjQ1WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEyMC4wOSwzMS4yM3YuMjRjMCwzLjc4LDIuMzMsNy4wOSw2LjYsNy4wOSwyLjM4LDAsNC41MS0xLjA1LDYuMjgtMy40NmgyLjA1Yy0xLjUzLDIuOTQtNC43NSw1LjM5LTguNTMsNS4zOS00Ljk5LDAtOC40MS0zLjg2LTguNDEtOC45LDAtNiw0LjI3LTExLjcyLDEwLjQzLTExLjcyLDQuNTksMCw3LjkzLDMuODIsNy45Myw4LjUzLDAsMS4xMy0uMDgsMS44OS0uMzYsMi44MmgtMTUuOThaTTEyMC4yOSwyOS4zNGgxNC4wOWMuMDQtLjI0LjA0LS40OC4wNC0uNzYsMC0zLjY2LTIuMzgtNi43Ni02LjA4LTYuNzYtNC4wNywwLTcuMjUsMy4zLTguMDUsNy41M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMzcuOTYsMzEuNTVjMC01Ljk2LDQuMzUtMTEuNjgsMTAuMzktMTEuNjgsNC4zMSwwLDcuMzcsMy4yMiw3LjkzLDcuMjFoLTIuMDFjLS41Mi0yLjU0LTIuNDYtNS4yNy02LjA0LTUuMjctNC42NywwLTguMjUsNC40Ny04LjI1LDkuNjYsMCwzLjU4LDIuMzMsNy4wOSw2LjQ4LDcuMDksMy4wMiwwLDUuNzYtMi4wNSw3LjA5LTUuMjdoMi4wMWMtMS40NSw0LjExLTUuMDcsNy4yMS05LjIyLDcuMjEtNC45NSwwLTguMzctMy45NS04LjM3LTguOTRaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTU3LjUzLDMxLjU1YzAtNS45Niw0LjM1LTExLjY4LDEwLjM5LTExLjY4LDQuOTUsMCw4LjMzLDMuOTUsOC4zMyw4Ljk0LDAsNS45Ni00LjMxLDExLjY4LTEwLjM1LDExLjY4LTQuOTUsMC04LjM3LTMuOTUtOC4zNy04Ljk0Wk0xNzQuMjMsMjguODljMC0zLjU4LTIuMjktNy4wOS02LjQ0LTcuMDktNC42NywwLTguMjUsNC40Ny04LjI1LDkuNjYsMCwzLjU4LDIuMzMsNy4wOSw2LjQ4LDcuMDksNC42MywwLDguMjEtNC40Nyw4LjIxLTkuNjZaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTc3LjM3LDQwLjE3bDMuNS0xOS45N2gxLjUzbC0uMDgsMi44MmguMmMxLjIxLTEuNTcsMy4zOC0zLjE0LDYuMTYtMy4xNCw1LjE5LDAsNy45Myw0LjE5LDcuMDEsOS4zbC0xLjkzLDEwLjk5aC0yLjAxbDIuMDEtMTEuMjNjLjY0LTMuNzQtMS4wOS03LjEzLTUuNDMtNy4xMy0zLjMsMC02LjEyLDIuMjktNi44LDYuMTZsLTIuMTMsMTIuMmgtMi4wMVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOTguMTgsMzEuNTVjMC01Ljk2LDQuMzUtMTEuNjgsMTAuMzktMTEuNjgsNC45NSwwLDguMzMsMy45NSw4LjMzLDguOTQsMCw1Ljk2LTQuMzEsMTEuNjgtMTAuMzUsMTEuNjgtNC45NSwwLTguMzctMy45NS04LjM3LTguOTRaTTIxNC44OSwyOC44OWMwLTMuNTgtMi4yOS03LjA5LTYuNDQtNy4wOS00LjY3LDAtOC4yNSw0LjQ3LTguMjUsOS42NiwwLDMuNTgsMi4zMyw3LjA5LDYuNDgsNy4wOSw0LjYzLDAsOC4yMS00LjQ3LDguMjEtOS42NloiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNDYuMTMsMjguNTNsLTIuMDEsMTEuNjNoLTIuMDFsMi4wNS0xMS44NGMuNTItMy4wNi0uNC02LjUyLTQuMjMtNi41Mi0yLjU4LDAtNS4wMywyLjA5LTUuNjQsNS42NGwtMi4yMSwxMi43MmgtMi4wMWwyLjA1LTExLjg0Yy42LTMuNS0uNzItNi41Mi00LjE5LTYuNTItMi41OCwwLTUuMDMsMi4wNS01LjY4LDUuNjRsLTIuMjEsMTIuNzJoLTIuMDFsMy41LTE5Ljk3aDEuNTNsLS4wNCwyLjU4aC4yYy44NS0xLjIxLDIuNzgtMi45LDUuMzEtMi45LDIuODYsMCw0LjcxLDEuODksNS4zOSw0LjI3LDEuMTMtMS45NywzLjI2LTQuMjcsNi41Mi00LjI3LDQuNDMsMCw2LjQ4LDQuMTUsNS42OCw4LjY2WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI0OC4xLDQwLjE3bDMuNS0xOS45N2gyLjAxbC0zLjUsMTkuOTdoLTIuMDFaTTI1MS45MiwxNS40NWMwLS45My43Ni0xLjY1LDEuNjUtMS42NS44MSwwLDEuMzcuNTYsMS4zNywxLjM3LDAsLjk3LS43NiwxLjY1LTEuNjUsMS42NS0uNzYsMC0xLjM3LS41Ni0xLjM3LTEuMzdaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjU0Ljc0LDMxLjU1YzAtNS45Niw0LjM1LTExLjY4LDEwLjM5LTExLjY4LDQuMzEsMCw3LjM3LDMuMjIsNy45Myw3LjIxaC0yLjAxYy0uNTItMi41NC0yLjQ2LTUuMjctNi4wNC01LjI3LTQuNjcsMC04LjI1LDQuNDctOC4yNSw5LjY2LDAsMy41OCwyLjMzLDcuMDksNi40OCw3LjA5LDMuMDIsMCw1Ljc2LTIuMDUsNy4wOS01LjI3aDIuMDFjLTEuNDUsNC4xMS01LjA3LDcuMjEtOS4yMiw3LjIxLTQuOTUsMC04LjM3LTMuOTUtOC4zNy04Ljk0WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI3My41LDM0LjUzaDIuMDFjLjA0LDIuMzgsMS45Nyw0LjAzLDQuOTksNC4wMywyLjM0LDAsNC41NS0xLjMzLDQuNTUtMy43OCwwLTQuMzEtOS40Ni0zLjYyLTkuNDYtOS4yNiwwLTMuMTQsMi43OC01LjY0LDYuNDgtNS42NCwzLjM4LDAsNi4zMiwyLjA1LDYuMzIsNS43NmgtMi4wNWMwLTIuNS0xLjg1LTMuODItNC4zOS0zLjgycy00LjM1LDEuMzctNC4zNSwzLjU0YzAsNC4yMyw5LjUsMy41OCw5LjUsOS4yNiwwLDMuNDItMi44Niw1Ljg4LTYuNzIsNS44OHMtNi43Ni0yLjM4LTYuODgtNS45NloiLz4KICA8L2c+CiAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTE1LjI1LDIwLjAybDIuNDEtNC4xMiwxMS42Myw2LjgxLjA3LTEzLjQ1LDQuODguMTYtLjIzLDEzLjQ5LDExLjc2LTYuNzUsMi42Myw0LjI0LTExLjg3LDYuNjgsMTEuNjksNi43LTIuNDEsNC4xMi0xMS42OC02Ljk4LS4wMiwxMy42Mi00Ljg4LS4xNi4wNy0xMy40NS0xMS41OSw2LjctMi42My00LjI0LDExLjgtNi41OC0xMS42My02LjgxWiIvPgo8L3N2Zz4=" alt="KeyEconomics">
+      </div>
+      <div class="eyebrow">KeyEconomic · Panamá · Q2 2026</div>
+      <h1>La economía panameña creció 6,4% en el segundo trimestre de 2026</h1>
+      <p>Según datos oficiales del Instituto Nacional de Estadística y Censo (INEC) y Ministerio de Economía y Finanzas (MEF), la economía panameña registró en el segundo trimestre de 2026 un crecimiento interanual de 6,4% respecto al mismo período de 2025. Este resultado evidencia una aceleración significativa del ritmo de crecimiento económico, consolidando la trayectoria alcista iniciada en el primer trimestre.</p>
+    </div>
+    <div class="big">
+      <div class="n">6,4<small>%</small></div>
+      <div class="cap">PIB Q2 2026 · interanual</div>
+    </div>
+  </header>
+
+  <!-- Desempeño acumulado + Gráfico 1 -->
+  <section>
+    <div class="sec-head"><h2>Desempeño acumulado y evolución trimestral</h2></div>
+    <p class="lead">El desempeño económico de 2026 hasta septiembre refleja una tendencia al alza consistente:</p>
+    <div class="grid2">
+      <div class="panel">
+        <h3>Gráfico 1: Aceleración del crecimiento económico (Q1-Q2-Julio 2026)</h3>
+        <div class="sub">Crecimiento interanual (%) · línea: primer semestre acumulado</div>
+        <div class="chart" id="c-accel"></div>
+      </div>
+      <div class="panel">
+        <table>
+          <thead><tr><th>Período</th><th class="r">Crecimiento interanual</th><th>Indicador base</th></tr></thead>
+          <tbody>
+            <tr><td>Q1 2026</td><td class="r num">4,8%</td><td>IMAE: 4,1%</td></tr>
+            <tr class="hi"><td>Q2 2026</td><td class="r num">6,4%</td><td>Aceleración de 1.6 pp</td></tr>
+            <tr><td>Primer semestre acum.</td><td class="r num">5,5%</td><td>Promedio ponderado</td></tr>
+            <tr><td>Julio 2026</td><td class="r num">8,49%</td><td>Máximo registrado 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motores -->
+  <section>
+    <div class="sec-head"><h2>Motores del crecimiento económico</h2></div>
+    <p class="lead">El crecimiento de 6,4% en Q2 2026 fue impulsado por cuatro actividades económicas estratégicas que duplican o exceden la tasa nacional, reflejando la diversificación de la economía panameña más allá de la infraestructura del Canal.</p>
+
+    <div class="sector">
+      <div class="sector-head"><h3>Transporte, logística y servicios conexos</h3><span class="pct num">12,8% de crecimiento</span></div>
+      <p>El sector logístico panameño experimentó un crecimiento de 12,8%, duplicando la tasa nacional. Integra: Canal de Panamá (+5,2% tránsitos, +17% ingresos, $4,802M en 9 meses); Tocumén (7,6M pasajeros, +15,1%); Puertos y transporte terrestre en capacidades elevadas.</p>
+      <div class="grid2">
+        <div class="panel">
+          <h3>Gráfico 2: Desempeño del Canal de Panamá 2026</h3>
+          <div class="sub">Variación interanual (%)</div>
+          <div class="chart" id="c-canal"></div>
+        </div>
+        <div class="tiles">
+          <div class="tile"><div class="v num">+5,2%</div><div class="l">Tránsitos del Canal</div></div>
+          <div class="tile"><div class="v num">+17%</div><div class="l">Ingresos del Canal</div></div>
+          <div class="tile"><div class="v num">$4,802M</div><div class="l">Ingresos del Canal en 9 meses</div></div>
+          <div class="tile"><div class="v num">7,6M</div><div class="l">Pasajeros en Tocumén (+15,1%)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sector">
+      <div class="sector-head"><h3>Comercio mayorista y minorista</h3><span class="pct num">11,6% de crecimiento</span></div>
+      <p>Fuerte demanda de consumo interno y reexportación regional. Zona Libre de Colón creció 22,6%. Posición consolidada como centro de distribución regional.</p>
+    </div>
+
+    <div class="sector">
+      <div class="sector-head"><h3>Agricultura, ganadería y silvicultura</h3><span class="pct num">9,6% de crecimiento</span></div>
+      <p>Condiciones favorables de demanda internacional, recuperación de producción y precios sostenidos. Cultivos permanentes, ganadería y silvicultura con dinamismo consolidado.</p>
+    </div>
+
+    <div class="grid2" style="margin-top:32px">
+      <div class="panel">
+        <h3>Gráfico 3: Multiplicador de crecimiento por sector</h3>
+        <div class="sub">Sectores Motores: Desempeño Q2 2026 · Multiplicador respecto al crecimiento nacional</div>
+        <div class="chart" id="c-sectors"></div>
+      </div>
+      <div class="panel">
+        <h3>Cuadro comparativo: Sectores con mayor dinámica (Q2 2026)</h3>
+        <table style="margin-top:12px">
+          <thead><tr><th>Actividad económica</th><th class="r">Crecimiento</th><th class="r">Relación con nacional</th></tr></thead>
+          <tbody>
+            <tr><td>Transporte, logística y servicios</td><td class="r num">12,8%</td><td class="r num">2,0x</td></tr>
+            <tr><td>Comercio mayorista y minorista</td><td class="r num">11,6%</td><td class="r num">1,8x</td></tr>
+            <tr><td>Agricultura, ganadería y silvicultura</td><td class="r num">9,6%</td><td class="r num">1,5x</td></tr>
+            <tr><td>Suministro de electricidad y agua</td><td class="r num">7,5%</td><td class="r num">1,2x</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factores + Gráfico 4 -->
+  <section>
+    <div class="sec-head"><h2>Factores estructurales del crecimiento</h2></div>
+    <p class="lead">El desempeño económico acelerado responde a una confluencia de factores internos y externos favorables:</p>
+    <div class="factors">
+      <div class="factor"><span class="tag">Logística</span><h3>Recuperación logística regional</h3><div class="v num">+17%</div><div class="vl">ingresos</div><p>Canal, puertos, Tocumén y transporte con capacidades elevadas. +5,2% tránsitos, +17% ingresos ($4,802M/9 meses).</p></div>
+      <div class="factor"><span class="tag">Turismo</span><h3>Dinamismo del turismo</h3><div class="v num">1,8M</div><div class="vl">visitantes hasta julio</div><p>1,8M visitantes hasta julio (+dos dígitos). Mejor primer semestre de la década. Q1: 1,1M turistas generaron B/.2,636.7M (+15,1%).</p></div>
+      <div class="factor"><span class="tag">Agro</span><h3>Recuperación agrícola</h3><div class="v num">+9,6%</div><div class="vl">en agricultura</div><p>Condiciones climáticas favorables y demanda internacional sostenida. +9,6% en agricultura.</p></div>
+      <div class="factor"><span class="tag">Inversión</span><h3>Expansión de inversión</h3><div class="v num">+43,5%</div><div class="vl">inversión privada en construcción</div><p>Construcción +43,5% inversión privada. 112,552 nuevos empleos (+20,5%).</p></div>
+      <div class="factor"><span class="tag">Precios</span><h3>Estabilidad de precios</h3><div class="v num">0,9%</div><div class="vl">inflación</div><p>Inflación controlada a 0,9% mediante subsidios energéticos y políticas consistentes.</p></div>
+    </div>
+    <div class="panel" style="margin-top:20px">
+      <h3>Gráfico 4: Factores estructurales convergentes</h3>
+      <div class="sub">Factores Estructurales del Crecimiento 2026 · Confluencia de dinámicas internas y externas</div>
+      <div class="chart" id="c-factors"></div>
+    </div>
+  </section>
+
+  <!-- Síntesis + Gráfico 5 -->
+  <section>
+    <div class="sec-head"><h2>Síntesis de indicadores clave</h2><span class="fig">Gráfico 5: Dashboard de indicadores clave 2026</span></div>
+    <ul class="synth">
+      <li><b>PIB Q2 2026:</b> 6,4% interanual</li>
+      <li>Aceleración impulsada por Canal (+5,2% tránsitos, +17% ingresos), Logística (+12,8%), Comercio (+11,6%), Agricultura (+9,6%)</li>
+      <li><b>Turismo:</b> 1,8 millones visitantes hasta julio (+dos dígitos)</li>
+      <li><b>Empleo:</b> 112,552 nuevos contratos Q1 (+20,5%)</li>
+      <li><b>Inflación controlada:</b> 0,9%</li>
+    </ul>
+    <div class="kpis" aria-label="Dashboard de indicadores clave 2026">
+      <div class="kpi"><span class="eyebrow">PIB Q2 2026</span><span class="v num">6,4%</span><span class="l">Interanual</span></div>
+      <div class="kpi"><span class="eyebrow">Canal</span><span class="v num">+17%</span><span class="l">Ingresos · +5,2% tránsitos</span></div>
+      <div class="kpi"><span class="eyebrow">Turismo</span><span class="v num">1,8M</span><span class="l">Visitantes hasta julio (+dos dígitos)</span></div>
+      <div class="kpi"><span class="eyebrow">Empleo</span><span class="v num">112,552</span><span class="l">Nuevos contratos Q1 (+20,5%)</span></div>
+      <div class="kpi"><span class="eyebrow">Inflación</span><span class="v num">0,9%</span><span class="l">Controlada</span></div>
+    </div>
+  </section>
+
+  <div class="sources">
+    <div class="eyebrow">Fuentes consultadas</div>
+    <ul>
+      <li>Instituto Nacional de Estadística y Censo (INEC) — Reporte oficial de PIB trimestral</li>
+      <li>Ministerio de Economía y Finanzas (MEF) — Comunicados económicos e informes de coyuntura</li>
+      <li>Contraloría General de la República — Informe Económico de Coyuntura, Observatorio Económico</li>
+      <li>Autoridad del Canal de Panamá — Estadísticas de tránsitos e ingresos</li>
+      <li>Autoridad de Turismo de Panamá — Estadísticas de visitantes</li>
+    </ul>
+  </div>
+</div>
+<footer class="site-foot">
+  <div class="in">
+    <div class="logos">
+      <img class="kw" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzODguMTggMTcwLjMzIj4KICA8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMjkuMy4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogMi4xLjAgQnVpbGQgMTUxKSAgLS0+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5zdDAgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNzQuNTksODQuNTljMS4wMi0yLjYsMi41MS00LjksNC40MS02LjgzLjQ4LS40OS45OC0uOTQsMS41MS0xLjM4bC42Ny0yLjE5aC0xMS44bC00LjE4LDE1LjU0Yy0uMjUuNzgtLjQ1LDEuNTktLjYyLDIuNDItLjE3LjgzLS4zNiwxLjYxLS41NSwyLjM1LS4yLjg4LS4zOSwxLjc0LS41OSwyLjU3aC0uMTVjLS4yLS44My0uMzktMS42OS0uNTktMi41Ny0uMi0uNzMtLjM5LTEuNTQtLjU5LTIuNDItLjItLjg4LS4zOS0xLjczLS41OS0yLjU3bC00LjExLTE1LjMyaC0xMC4xMmwtMy45NiwxNS4zMmMtLjI1LjgzLS40NywxLjY3LS42NiwyLjUzLS4yLjg2LS4zNywxLjY1LS41MSwyLjM4bC0uNTEsMi41N2gtLjE1Yy0uMTUtLjc4LS4zMi0xLjYxLS41MS0yLjQ5LS4xNS0uNzMtLjMzLTEuNTEtLjU1LTIuMzUtLjIyLS44My0uNDMtMS42NC0uNjItMi40MmwtMy42LTE0LjExLTYuMzksMTguNzMsNS4yMywxNy4zN2gxMS4wN2w0LjQ3LTE3LjAxYy4xOS0uNzMuNC0xLjQ5LjYyLTIuMjcuMjItLjc4LjQtMS41MS41NS0yLjIuMTktLjc4LjM3LTEuNTQuNTEtMi4yN2guMTVjLjE1LjczLjMyLDEuNDkuNTEsMi4yNy4xNS42OS4zLDEuNDIuNDgsMi4yLjE3Ljc4LjM4LDEuNTQuNjIsMi4yN2w0LjQsMTcuMDFoMTEuMjJsNC4wMi0xMy4xMWMtLjQyLTEuNzctLjY0LTMuNjQtLjY0LTUuNTgsMC0zLjAyLjUyLTUuODYsMS41NC04LjQ1WiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMzcuMjEsNzcuOHYtMy44OWMtLjQ0LS4xOS0xLjIyLS4yOS0yLjM1LS4yOS0yLjMsMC00LjI1LjUxLTUuODYsMS41NC0xLjYxLDEuMDMtMy4wOCwyLjY2LTQuNCw0LjkxaC0uMjJ2LTUuODZoLTExLjQ0djYuODljLjY5LDEuMSwxLjI4LDIuMjYsMS43NywzLjUxLDEuMDIsMi41OSwxLjU0LDUuNDMsMS41NCw4LjQ1cy0uNTIsNS44Ni0xLjU0LDguNDVjLS40OSwxLjI0LTEuMDgsMi40MS0xLjc3LDMuNTF2Ni43NGgxMS45NXYtMTYuODZjMC00LjExLDEuMDktNy4wNSwzLjI2LTguODMsMS4zNS0xLjEsMi45OC0xLjc2LDQuOS0xLjk3Ljc4LTEuODgsMS43OC0zLjU1LDIuOTYtNC45OC4zOC0uNDUuNzctLjg4LDEuMTktMS4yOVoiLz4KICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzM3LjIxLDc5LjY0Yy0uMDcuMDgtLjE1LjE3LS4yMi4yNS0uOTksMS4xOS0xLjgzLDIuNTYtMi41Miw0LjA5LDAsMCwuMDIsMCwuMDIsMCIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMzQuNDksODMuOThzLS4wMiwwLS4wMiwwYy0uMTIuMjYtLjIzLjUyLS4zNC43OS0uMS4yNi0uMi41Mi0uMy43OC0uMDcuMi0uMTUuNC0uMjEuNjEtLjgxLDIuNDQtMS4yMSw1LjEzLTEuMjEsOC4wNiwwLDMuMTMuNCw1LjkzLDEuMjEsOC4zOS44MSwyLjQ3LDEuOTQsNC41NiwzLjQxLDYuMjcsMS40NywxLjcxLDMuMiwzLjAyLDUuMiwzLjkyLDIsLjksNC4yLDEuMzYsNi42LDEuMzZzNC42OC0uNTUsNi41Ni0xLjY1YzEuODgtMS4xLDMuMzgtMi42Myw0LjUxLTQuNThoLjE1djYuNTFoMTEuNDR2LTU5Ljc4Yy02LjYsMC0xMS45NSw1LjM1LTExLjk1LDExLjk1djEzLjFoLS4yMmMtMS4xMi0xLjU2LTIuNDktMi44NS00LjExLTMuODUtMS42MS0xLTMuNzQtMS41LTYuMzgtMS41LTIuNDQsMC00LjY3LjQ5LTYuNjcsMS40Ny0xLjI0LjYxLTIuMzcsMS4zNi0zLjQsMi4yNS0uMjcuMjMtLjUyLjQ4LS43OC43My0uMjcuMjctLjUyLjU1LS43OC44NE0zNTcuNzQsMTAxLjc4Yy0xLjM5LDEuOTYtMy4zNCwyLjkzLTUuODMsMi45My0yLjM1LDAtNC4xNy0uOTUtNS40Ni0yLjg2LTEuMy0xLjkxLTEuOTQtNC41LTEuOTQtNy43N3MuNjYtNS43NSwxLjk4LTcuNzNjMS4zMi0xLjk4LDMuMTgtMi45Nyw1LjU3LTIuOTcsMS4zMiwwLDIuNDYuMjcsMy40MS44MS45NS41NCwxLjc2LDEuMjgsMi40MiwyLjI0LjY2Ljk1LDEuMTUsMi4xLDEuNDcsMy40NS4zMiwxLjM0LjQ4LDIuOC40OCw0LjM2LDAsMy4wOC0uNyw1LjYtMi4wOSw3LjU1WiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03My42NywyOC4yNWMtMzEuNTQsMC01Ny4wNCwyNS42Mi01Ny4wNCw1Ny4xMXMyNS41LDU3LjIxLDU3LjA0LDU3LjIxYzIwLjQ0LDAsMzguMzgtNy40OCw0OC40LTIzLjc4VjUyLjA2Yy0xMC4wMi0xNi4yNS0yNy45NS0yMy44MS00OC40LTIzLjgxWk00Ny43MSwxMDUuMzRjLTkuMjUsMC0xNi44Ny03LjQ0LTE2Ljg3LTE2LjkxczcuNjEtMTYuOTEsMTYuODctMTYuOTEsMTYuODcsNy41OSwxNi44NywxNi45MS03LjQxLDE2LjkxLTE2Ljg3LDE2LjkxWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNjUuNzgsNzQuMjZsLTEzLjc4LS4wNS0xMS4xOSwxMi42NC4wNi0xNi43NmMuMDMtNy41MS00LjY3LTE0LjIzLTExLjc0LTE2Ljc3bC0uMjUsNTkuMzNoMTEuODJsLjA2LTEyLjQ2LDMuNi0zLjgsOS4xMSwxNS4zOWgxMi42bC0xMy41NS0yMy41LDEzLjI0LTE0LjAzWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOTIuOTEsNzcuNzljLTEuNjEtMS40Ny0zLjQ4LTIuNjEtNS42MS0zLjQ1LTIuMTMtLjgzLTQuNTMtMS4yNS03LjIyLTEuMjUtMi44OCwwLTUuNS41LTcuODQsMS41LTIuMzUsMS00LjM3LDIuNC02LjA4LDQuMTgtMS43MSwxLjc4LTMuMDMsMy44OS0zLjk2LDYuMy0uOTMsMi40Mi0xLjM5LDUuMDItMS4zOSw3Ljgxcy40Niw1LjQ3LDEuMzksNy45MmMuOTMsMi40NCwyLjI1LDQuNTYsMy45Niw2LjM0LDEuNzEsMS43OCwzLjgxLDMuMTgsNi4zLDQuMTgsMi40OSwxLDUuMjgsMS41LDguMzYsMS41LDIuMzksMCw0LjU2LS4yOSw2LjQ5LS44OCwxLjkzLS41OSwzLjY4LTEuNDQsNS4yNC0yLjU3LDEuNjYtMS4xMiwzLjAzLTIuNDYsNC4xMS00LDEuMDctMS41NCwxLjgxLTMuMTYsMi4yLTQuODhoLTExLjY2Yy0uNTQsMS4xNy0xLjMyLDIuMDktMi4zNSwyLjc1LTEuMDMuNjYtMi4zMi45OS0zLjg5Ljk5LTIuNDksMC00LjQyLS43My01Ljc5LTIuMi0xLjM3LTEuNDctMi4yNS0zLjQ3LTIuNjQtNi4wMWgyNi45OGMuMDUtMy44MS0uNDgtNy4yOS0xLjU4LTEwLjQ1LTEuMS0zLjE1LTIuNzctNS43NS01LjAyLTcuODFaTTE3Mi42MSw4OC45NGMuMzktMi4yNSwxLjItNC4wMywyLjQyLTUuMzUsMS4yMi0xLjMyLDIuOTgtMS45OCw1LjI4LTEuOTgsMS45NSwwLDMuNTcuNjYsNC44NCwxLjk4LDEuMjcsMS4zMiwyLjAzLDMuMSwyLjI3LDUuMzVoLTE0LjgxWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zMTQuNzEsOTMuMDRjMC0yLjgzLS40OC01LjQ2LTEuNDMtNy44OC0uMS0uMjYtLjIxLS41Mi0uMzMtLjc4LS4yNC0uNTQtLjUtMS4wNi0uNzgtMS41Ni0uMjQtLjQ0LS41LS44Ny0uNzgtMS4yOC0uNjQtLjk2LTEuMzUtMS44Ni0yLjE1LTIuNjktMS43NC0xLjc4LTMuODQtMy4xOC02LjMtNC4xOC0yLjQ3LTEtNS4yMi0xLjUtOC4yNS0xLjUtLjAxLDAtLjAyLDAtLjA0LDBzLS4wMiwwLS4wNCwwYy0zLjAzLDAtNS43OC41LTguMjUsMS41LTIuNDcsMS00LjU3LDIuNC02LjMsNC4xOC0uOC44My0xLjUyLDEuNzItMi4xNSwyLjY5LS4yNy40MS0uNTMuODQtLjc4LDEuMjgtLjI4LjUtLjU0LDEuMDItLjc4LDEuNTYtLjExLjI2LS4yMi41MS0uMzMuNzgtLjk1LDIuNDItMS40Myw1LjA1LTEuNDMsNy44OCwwLDIuMzkuMzQsNC42MiwxLjAyLDYuNzEsMCwuMDIuMDIuMDUuMDIuMDcuMTIuMzcuMjUuNzMuMzksMS4wOS4xLjI2LjIxLjUyLjMzLjc4LDAsMCwwLDAsMCwuMDEuMDkuMTkuMTguMzguMjcuNTcuMDQuMDguMDguMTcuMTIuMjUuMDguMTYuMTcuMzIuMjUuNDguMDQuMDguMDguMTYuMTIuMjQuMDEuMDIuMDMuMDQuMDQuMDcuMjEuMzcuNDIuNzMuNjUsMS4wOC4wMy4wNC4wNS4wOS4wOC4xNC42NC45NiwxLjM1LDEuODYsMi4xNSwyLjY4LDEuNzQsMS43OCwzLjg0LDMuMTgsNi4zLDQuMTgsMi40NywxLDUuMjIsMS41LDguMjUsMS41LjAxLDAsLjAyLDAsLjA0LDBzLjAyLDAsLjA0LDBjMy4wMywwLDUuNzgtLjUsOC4yNS0xLjUsMi40Ny0xLDQuNTctMi4zOSw2LjMtNC4xOC44LS44MywxLjUyLTEuNzIsMi4xNS0yLjY4LjAzLS4wNC4wNS0uMDkuMDgtLjE0LjIzLS4zNS40NS0uNzEuNjUtMS4wOC4wMS0uMDIuMDMtLjA0LjA0LS4wNy4wNC0uMDguMDgtLjE2LjEyLS4yNC4wOS0uMTYuMTctLjMyLjI1LS40OC4wNC0uMDguMDgtLjE3LjEyLS4yNS4wOS0uMTkuMTgtLjM4LjI3LS41NywwLDAsMCwwLDAtLjAxLjExLS4yNi4yMi0uNTEuMzMtLjc4LjE0LS4zNi4yNy0uNzMuMzktMS4wOSwwLS4wMi4wMi0uMDUuMDItLjA3LjExLS4zNC4yMS0uNjguMy0xLjAyLDAtLjAyLjAxLS4wNS4wMi0uMDdoMGMuNDYtMS43OC43LTMuNjUuNy01LjYyWk0yOTkuOTgsMTAwLjg3Yy0xLjE4LDEuODUtMi45MSwyLjc2LTUuMjgsMi43Ni0uMDEsMC0uMDIsMC0uMDQsMC0yLjM2LDAtNC4wOS0uOTEtNS4yOS0yLjc2LTEuMjYtMS45NC0xLjg5LTQuNTctMS44OS03Ljgzcy42NC01LjksMS44OS03Ljg3YzEuMi0xLjg3LDIuOTMtMi43OCw1LjI4LTIuNzkuMDEsMCwuMDIsMCwuMDQsMCwyLjM3LDAsNC4xLjkxLDUuMjgsMi43OSwxLjIzLDEuOTcsMS44Niw0LjYxLDEuODYsNy44N3MtLjYzLDUuODktMS44Niw3LjgzWiIvPgogIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yMzQuMzMsNzQuMmMtNy4wNSwwLTEzLjI5LDQuNTctMTUuNDIsMTEuMjlsLTEuNDgsNC42OWMtLjI5LjkzLS41NywxLjkxLS44NCwyLjkzLS4yNywxLjAzLS41MiwxLjk2LS43NywyLjc5LS4xOS43Ni0uMzgsMS41Mi0uNTcsMi4yOS0uMTktLjc2LS4zOC0xLjUyLS41Ny0yLjI5LS4yNS0uODMtLjUtMS43Ni0uNzctMi43OS0uMjctMS4wMy0uNTUtMi0uODQtMi45M2wtMS40OC00LjY5Yy0yLjEzLTYuNzItOC4zNy0xMS4yOS0xNS40Mi0xMS4yOWgtLjc2bDExLjA3LDI4Ljg4Yy43OCwyLDEuMzYsMy41OSwxLjcyLDQuNzYuMzcsMS4xNy41NSwyLjE4LjU1LDMuMDEsMCwxLjI3LS4zOCwyLjI1LTEuMTQsMi45My0uNzYuNjgtMi4wMiwxLjAzLTMuNzgsMS4wM2gtNC4xMXY5LjMxaDcuNzdjMS45MSwwLDMuNTctLjIxLDQuOTktLjYyLDEuNDItLjQyLDIuNjgtMS4wOSwzLjc4LTIuMDIsMS4xLS45MywyLjA5LTIuMTUsMi45Ny0zLjY3Ljg4LTEuNTIsMS42OS0zLjM3LDIuNDItNS41N2wzLjUyLTEwLjMyLDkuOTQtMjcuNzNoLS43NloiLz4KPC9zdmc+" alt="Keyword">
+      <span class="sep" aria-hidden="true"></span>
+      <img class="ke" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMDMuNDggNTYuODciPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAzMC44LjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuNCBCdWlsZCAxKSAgLS0+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5zdDAgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5zdDEgewogICAgICAgIGZpbGw6ICMwMDc5ZmY7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTc4Ljc1LDQwLjE3aC01LjUybC03LjYxLTkuNjJ2OS42MmgtNC40M1YxMS45OGg0LjQzdjE2LjgzbDcuMTMtOS4wMmg1LjExbC03Ljg1LDkuNjYsOC43NCwxMC43MVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05Ny4yMiwzMS43MWgtMTUuMWMuNTYsMy4xLDIuNzQsNC45NSw1LjY0LDQuOTUsMi4yOSwwLDMuNjYtMS4wOSw0LjM5LTIuMTNoNC41OWMtMS4xMywyLjk0LTQuNDcsNi4xMi04Ljk0LDYuMTItNS42NCwwLTEwLjExLTQuNjMtMTAuMTEtMTAuNjdzNC41OS0xMC42NywxMC4wNy0xMC42Nyw5LjcsNC40Myw5LjcsMTAuMjNjMCwuOTctLjEyLDEuNzMtLjI0LDIuMTdaTTgyLjEzLDI4LjM3aDExLjAzYy0uNDgtMy4wMi0yLjY2LTUuMDctNS4zOS01LjA3cy01LjA3LDEuOTctNS42NCw1LjA3WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTExMi43MiwxOS43OWg0LjU1bC04LjQ1LDIxLjVjLTEuOTMsNC44Ny0zLjg2LDYuMzItNi40NCw2LjMyLS45MywwLTEuNjktLjItMi4xNy0uNHYtNC4wM2MuNC4yLjg1LjI4LDEuMzcuMjgsMS41MywwLDIuNTQtLjY0LDMuMjYtMi41NGwuNDgtMS4yOS04LjAxLTE5Ljg1aDQuNzVsNS40MywxNC40NSw1LjIzLTE0LjQ1WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTEyMC4wOSwzMS4yM3YuMjRjMCwzLjc4LDIuMzMsNy4wOSw2LjYsNy4wOSwyLjM4LDAsNC41MS0xLjA1LDYuMjgtMy40NmgyLjA1Yy0xLjUzLDIuOTQtNC43NSw1LjM5LTguNTMsNS4zOS00Ljk5LDAtOC40MS0zLjg2LTguNDEtOC45LDAtNiw0LjI3LTExLjcyLDEwLjQzLTExLjcyLDQuNTksMCw3LjkzLDMuODIsNy45Myw4LjUzLDAsMS4xMy0uMDgsMS44OS0uMzYsMi44MmgtMTUuOThaTTEyMC4yOSwyOS4zNGgxNC4wOWMuMDQtLjI0LjA0LS40OC4wNC0uNzYsMC0zLjY2LTIuMzgtNi43Ni02LjA4LTYuNzYtNC4wNywwLTcuMjUsMy4zLTguMDUsNy41M1oiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMzcuOTYsMzEuNTVjMC01Ljk2LDQuMzUtMTEuNjgsMTAuMzktMTEuNjgsNC4zMSwwLDcuMzcsMy4yMiw3LjkzLDcuMjFoLTIuMDFjLS41Mi0yLjU0LTIuNDYtNS4yNy02LjA0LTUuMjctNC42NywwLTguMjUsNC40Ny04LjI1LDkuNjYsMCwzLjU4LDIuMzMsNy4wOSw2LjQ4LDcuMDksMy4wMiwwLDUuNzYtMi4wNSw3LjA5LTUuMjdoMi4wMWMtMS40NSw0LjExLTUuMDcsNy4yMS05LjIyLDcuMjEtNC45NSwwLTguMzctMy45NS04LjM3LTguOTRaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTU3LjUzLDMxLjU1YzAtNS45Niw0LjM1LTExLjY4LDEwLjM5LTExLjY4LDQuOTUsMCw4LjMzLDMuOTUsOC4zMyw4Ljk0LDAsNS45Ni00LjMxLDExLjY4LTEwLjM1LDExLjY4LTQuOTUsMC04LjM3LTMuOTUtOC4zNy04Ljk0Wk0xNzQuMjMsMjguODljMC0zLjU4LTIuMjktNy4wOS02LjQ0LTcuMDktNC42NywwLTguMjUsNC40Ny04LjI1LDkuNjYsMCwzLjU4LDIuMzMsNy4wOSw2LjQ4LDcuMDksNC42MywwLDguMjEtNC40Nyw4LjIxLTkuNjZaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTc3LjM3LDQwLjE3bDMuNS0xOS45N2gxLjUzbC0uMDgsMi44MmguMmMxLjIxLTEuNTcsMy4zOC0zLjE0LDYuMTYtMy4xNCw1LjE5LDAsNy45Myw0LjE5LDcuMDEsOS4zbC0xLjkzLDEwLjk5aC0yLjAxbDIuMDEtMTEuMjNjLjY0LTMuNzQtMS4wOS03LjEzLTUuNDMtNy4xMy0zLjMsMC02LjEyLDIuMjktNi44LDYuMTZsLTIuMTMsMTIuMmgtMi4wMVoiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOTguMTgsMzEuNTVjMC01Ljk2LDQuMzUtMTEuNjgsMTAuMzktMTEuNjgsNC45NSwwLDguMzMsMy45NSw4LjMzLDguOTQsMCw1Ljk2LTQuMzEsMTEuNjgtMTAuMzUsMTEuNjgtNC45NSwwLTguMzctMy45NS04LjM3LTguOTRaTTIxNC44OSwyOC44OWMwLTMuNTgtMi4yOS03LjA5LTYuNDQtNy4wOS00LjY3LDAtOC4yNSw0LjQ3LTguMjUsOS42NiwwLDMuNTgsMi4zMyw3LjA5LDYuNDgsNy4wOSw0LjYzLDAsOC4yMS00LjQ3LDguMjEtOS42NloiLz4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNDYuMTMsMjguNTNsLTIuMDEsMTEuNjNoLTIuMDFsMi4wNS0xMS44NGMuNTItMy4wNi0uNC02LjUyLTQuMjMtNi41Mi0yLjU4LDAtNS4wMywyLjA5LTUuNjQsNS42NGwtMi4yMSwxMi43MmgtMi4wMWwyLjA1LTExLjg0Yy42LTMuNS0uNzItNi41Mi00LjE5LTYuNTItMi41OCwwLTUuMDMsMi4wNS01LjY4LDUuNjRsLTIuMjEsMTIuNzJoLTIuMDFsMy41LTE5Ljk3aDEuNTNsLS4wNCwyLjU4aC4yYy44NS0xLjIxLDIuNzgtMi45LDUuMzEtMi45LDIuODYsMCw0LjcxLDEuODksNS4zOSw0LjI3LDEuMTMtMS45NywzLjI2LTQuMjcsNi41Mi00LjI3LDQuNDMsMCw2LjQ4LDQuMTUsNS42OCw4LjY2WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI0OC4xLDQwLjE3bDMuNS0xOS45N2gyLjAxbC0zLjUsMTkuOTdoLTIuMDFaTTI1MS45MiwxNS40NWMwLS45My43Ni0xLjY1LDEuNjUtMS42NS44MSwwLDEuMzcuNTYsMS4zNywxLjM3LDAsLjk3LS43NiwxLjY1LTEuNjUsMS42NS0uNzYsMC0xLjM3LS41Ni0xLjM3LTEuMzdaIi8+CiAgICA8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjU0Ljc0LDMxLjU1YzAtNS45Niw0LjM1LTExLjY4LDEwLjM5LTExLjY4LDQuMzEsMCw3LjM3LDMuMjIsNy45Myw3LjIxaC0yLjAxYy0uNTItMi41NC0yLjQ2LTUuMjctNi4wNC01LjI3LTQuNjcsMC04LjI1LDQuNDctOC4yNSw5LjY2LDAsMy41OCwyLjMzLDcuMDksNi40OCw3LjA5LDMuMDIsMCw1Ljc2LTIuMDUsNy4wOS01LjI3aDIuMDFjLTEuNDUsNC4xMS01LjA3LDcuMjEtOS4yMiw3LjIxLTQuOTUsMC04LjM3LTMuOTUtOC4zNy04Ljk0WiIvPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTI3My41LDM0LjUzaDIuMDFjLjA0LDIuMzgsMS45Nyw0LjAzLDQuOTksNC4wMywyLjM0LDAsNC41NS0xLjMzLDQuNTUtMy43OCwwLTQuMzEtOS40Ni0zLjYyLTkuNDYtOS4yNiwwLTMuMTQsMi43OC01LjY0LDYuNDgtNS42NCwzLjM4LDAsNi4zMiwyLjA1LDYuMzIsNS43NmgtMi4wNWMwLTIuNS0xLjg1LTMuODItNC4zOS0zLjgycy00LjM1LDEuMzctNC4zNSwzLjU0YzAsNC4yMyw5LjUsMy41OCw5LjUsOS4yNiwwLDMuNDItMi44Niw1Ljg4LTYuNzIsNS44OHMtNi43Ni0yLjM4LTYuODgtNS45NloiLz4KICA8L2c+CiAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTE1LjI1LDIwLjAybDIuNDEtNC4xMiwxMS42Myw2LjgxLjA3LTEzLjQ1LDQuODguMTYtLjIzLDEzLjQ5LDExLjc2LTYuNzUsMi42Myw0LjI0LTExLjg3LDYuNjgsMTEuNjksNi43LTIuNDEsNC4xMi0xMS42OC02Ljk4LS4wMiwxMy42Mi00Ljg4LS4xNi4wNy0xMy40NS0xMS41OSw2LjctMi42My00LjI0LDExLjgtNi41OC0xMS42My02LjgxWiIvPgo8L3N2Zz4=" alt="KeyEconomics">
+    </div>
+    <small>© Todos los derechos reservados</small>
+  </div>
+</footer>
+<div id="tip" role="tooltip"></div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const fmt=(v,d)=>v.toLocaleString("es-PA",{minimumFractionDigits:d??1,maximumFractionDigits:d??2});
+  const el=(n,a,t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e};
+  const tip=document.getElementById("tip");
+  function hover(node,text){
+    node.addEventListener("pointermove",e=>{tip.textContent=text;tip.style.opacity=1;
+      const x=Math.min(e.clientX+12,innerWidth-tip.offsetWidth-8);tip.style.left=x+"px";tip.style.top=(e.clientY-tip.offsetHeight-10)+"px"});
+    node.addEventListener("pointerleave",()=>tip.style.opacity=0);
+  }
+  const hbarPath=(x,y,w,h,r)=>{r=Math.min(r,w,h/2);return `M${x},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h-r}Q${x+w},${y+h} ${x+w-r},${y+h}H${x}Z`};
+
+  const vbarPath=(x,y,w,h,r)=>{r=Math.min(r,h,w/2);return `M${x},${y+h}V${y+r}Q${x},${y} ${x+r},${y}H${x+w-r}Q${x+w},${y} ${x+w},${y+r}V${y+h}Z`};
+
+  // Gráfico 1 — línea con área (como el original): escala 3–9,5, promedio 1er semestre punteado
+  (function(){
+    const data=[["Q1 2026",4.8],["Q2 2026",6.4],["Julio 2026",8.49]], ref=5.5, lo=3, hi=9.5;
+    const W=600,H=340,m={t:56,r:40,b:34,l:56},iw=W-m.l-m.r,ih=H-m.t-m.b;
+    const s=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Crecimiento interanual: Q1 4,8%, Q2 6,4%, julio 8,49%; promedio primer semestre 5,5%"});
+    const y=v=>m.t+ih-(v-lo)/(hi-lo)*ih, x=i=>m.l+i*iw/(data.length-1);
+    for(let v=3;v<=9;v++){s.append(el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:"var(--grid)","stroke-width":1}));
+      s.append(el("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end"},v))}
+    s.append(el("text",{x:14,y:m.t+ih/2,"text-anchor":"middle",transform:`rotate(-90 14 ${m.t+ih/2})`,class:"cat"},"Crecimiento interanual (%)"));
+    const pts=data.map((d,i)=>`${x(i)},${y(d[1])}`).join(" L");
+    s.append(el("path",{d:`M${x(0)},${y(lo)} L${pts} L${x(data.length-1)},${y(lo)}Z`,fill:"var(--area)"}));
+    s.append(el("line",{x1:m.l,x2:W-m.r,y1:y(ref),y2:y(ref),stroke:"var(--ref)","stroke-width":1.5,"stroke-dasharray":"6 4",opacity:.6}));
+    s.append(el("path",{d:`M${pts}`,fill:"none",stroke:"var(--bar)","stroke-width":3.5,"stroke-linejoin":"round","stroke-linecap":"round"}));
+    // leyenda
+    const lg=m.l;
+    s.append(el("line",{x1:lg,x2:lg+26,y1:14,y2:14,stroke:"var(--bar)","stroke-width":3.5,"stroke-linecap":"round"}));
+    s.append(el("circle",{cx:lg+13,cy:14,r:6,fill:"var(--bar)"}));
+    s.append(el("text",{x:lg+34,y:18,class:"cat"},"Tasa de crecimiento"));
+    s.append(el("line",{x1:lg,x2:lg+26,y1:34,y2:34,stroke:"var(--ref)","stroke-width":1.5,"stroke-dasharray":"6 4",opacity:.6}));
+    s.append(el("text",{x:lg+34,y:38,class:"cat"},"Promedio primer semestre (5,5%)"));
+    data.forEach(([k,v],i)=>{
+      const c=el("circle",{class:"mark",cx:x(i),cy:y(v),r:8,fill:"var(--bar)",stroke:"var(--surface)","stroke-width":2});
+      hover(c,`${k}: ${fmt(v)}%`);s.append(c);
+      const anc=i===0?"start":i===data.length-1?"end":"middle";
+      s.append(el("text",{class:"vlabel",x:x(i)+(i===0?-6:i===data.length-1?6:0),y:y(v)-18,"text-anchor":anc,style:"font-size:15px;font-weight:600;fill:var(--bar-hi)"},fmt(v)+"%"));
+      s.append(el("text",{class:"cat",x:x(i),y:H-10,"text-anchor":anc},k))});
+    document.getElementById("c-accel").append(s);
+  })();
+
+  function hbars(id,data,opt){
+    const W=720,rowH=44,m={t:opt.ref?26:8,r:opt.note?84:56,b:28,l:opt.lw},iw=W-m.l-m.r,H=m.t+rowH*data.length+m.b,max=opt.max;
+    const s=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":opt.aria});
+    const x=v=>m.l+v/max*iw;
+    for(let v=0;v<=max;v+=opt.step){s.append(el("line",{x1:x(v),x2:x(v),y1:m.t,y2:H-m.b,stroke:"var(--grid)","stroke-width":1}));
+      s.append(el("text",{x:x(v),y:H-8,"text-anchor":"middle"},v+"%"))}
+    data.forEach((d,i)=>{const yy=m.t+i*rowH,bh=20,by=yy+(rowH-bh)/2;
+      s.append(el("text",{class:"cat",x:m.l-12,y:by+bh/2+4,"text-anchor":"end"},d[0]));
+      const p=el("path",{class:"mark",d:hbarPath(m.l,by,x(d[1])-m.l,bh,4),fill:d[2]||"var(--bar)"});
+      hover(p,`${d[0]}: ${fmt(d[1])}%`+(opt.note?` · ${opt.note(d)} relación con nacional`:""));s.append(p);
+      s.append(el("text",{class:"vlabel",x:x(d[1])+8,y:by+bh/2+4},fmt(d[1])+"%"));
+      if(opt.note)s.append(el("text",{x:W-4,y:by+bh/2+4,"text-anchor":"end",style:"fill:var(--bar-hi);font-weight:500"},opt.note(d)))});
+    if(opt.ref){s.append(el("line",{x1:x(opt.ref),x2:x(opt.ref),y1:m.t-6,y2:H-m.b,stroke:"var(--ref)","stroke-width":1.5,"stroke-dasharray":"5 4"}));
+      s.append(el("text",{x:x(opt.ref)+6,y:m.t-10,style:"fill:var(--ink)"},opt.refLabel))}
+    document.getElementById(id).append(s);
+  }
+
+  // Gráfico 3 — como el original: incluye Promedio Nacional, un color por sector, multiplicador debajo del valor
+  (function(){
+    const data=[["Promedio","Nacional",6.4,"","#b9b6c6"],["Electricidad","y Agua",7.5,"1.2x","#ffbf5e"],
+      ["Agricultura,","Ganadería",9.6,"1.5x","#ca43e9"],["Comercio","Mayorista",11.6,"1.8x","#8d61ff"],["Transporte,","Logística",12.8,"2.0x","#3673ef"]];
+    const W=680,rowH=62,m={t:34,r:20,b:52,l:110},iw=W-m.l-m.r,H=m.t+rowH*data.length+m.b,max=15;
+    const s=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Sectores motores Q2 2026 frente al promedio nacional de 6,4%"});
+    const x=v=>m.l+v/max*iw;
+    for(let v=0;v<=14;v+=2){s.append(el("line",{x1:x(v),x2:x(v),y1:m.t,y2:H-m.b,stroke:"var(--grid)","stroke-width":1}));
+      s.append(el("text",{x:x(v),y:H-m.b+18,"text-anchor":"middle"},v))}
+    s.append(el("text",{class:"cat",x:m.l+iw/2,y:H-8,"text-anchor":"middle",style:"font-weight:600;fill:var(--ink)"},"Crecimiento interanual (%)"));
+    data.forEach((d,i)=>{const by=m.t+i*rowH+8,bh=rowH-16,cy=by+bh/2;
+      s.append(el("text",{class:"cat",x:m.l-10,y:cy-3,"text-anchor":"end"},d[0]));
+      s.append(el("text",{class:"cat",x:m.l-10,y:cy+13,"text-anchor":"end"},d[1]));
+      const p=el("path",{class:"mark",d:hbarPath(m.l,by,x(d[2])-m.l,bh,4),fill:d[4]});
+      hover(p,`${d[0]} ${d[1]}: ${fmt(d[2])}%`+(d[3]?` (${d[3]})`:""));s.append(p);
+      s.append(el("text",{class:"vlabel",x:x(d[2])+12,y:d[3]?cy-2:cy+5,style:"font-weight:700"},String(d[2]).replace(".",",")+"%"));
+      if(d[3])s.append(el("text",{x:x(d[2])+12,y:cy+15,style:"font-style:italic;font-size:11px"},`(${d[3].replace(".",",")})`))});
+    s.append(el("line",{x1:x(6.4),x2:x(6.4),y1:m.t,y2:H-m.b,stroke:"var(--ref)","stroke-width":2,"stroke-dasharray":"6 4",opacity:.6}));
+    s.append(el("line",{x1:W-m.r-128,x2:W-m.r-106,y1:18,y2:18,stroke:"var(--ref)","stroke-width":2,"stroke-dasharray":"6 4",opacity:.6}));
+    s.append(el("text",{class:"cat",x:W-m.r-100,y:22},"Promedio nacional"));
+    document.getElementById("c-sectors").append(s);
+  })();
+
+  hbars("c-canal",[
+    ["Ingresos",17.0,"var(--bar-hi)"],
+    ["Tránsitos",5.2]
+  ],{lw:100,max:20,step:5,aria:"Canal de Panamá 2026: tránsitos +5,2%, ingresos +17%"});
+
+  // Gráfico 4: burbujas por nivel de impacto (valores del gráfico original)
+  (function(){
+    const data=[
+      ["Logística","Regional",5.0,84,"#3673ef","#fff",["Canal +5.2%","Tocumén +15.1%","Puertos activos"]],
+      ["Turismo","",4.5,76,"#8d61ff","#fff",["1.8M visitantes","+dos dígitos"]],
+      ["Agricultura","e Industria",4.0,72,"#ca43e9","#fff",["9.6% crecimiento","Demanda global","sostenida"]],
+      ["Inversión","Privada",4.5,76,"#542ab1","#fff",["+43.5% inversión","+20.5% empleo"]],
+      ["Estabilidad","de Precios",3.5,66,"#cde368","#18191f",["Inflación 0.9%","Subsidios","energéticos"]]];
+    const W=900,H=520,m={t:16,r:16,b:52,l:52},iw=W-m.l-m.r,ih=H-m.t-m.b,lo=2,hi=6;
+    const s=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Factores estructurales por nivel de impacto: Logística 5, Turismo 4,5, Agricultura 4, Inversión 4,5, Estabilidad de precios 3,5"});
+    const y=v=>m.t+ih-(v-lo)/(hi-lo)*ih, x=i=>m.l+iw/data.length*(i+.5);
+    for(let v=2;v<=6;v+=.5){s.append(el("line",{x1:m.l,x2:W-m.r,y1:y(v),y2:y(v),stroke:"var(--grid)","stroke-width":1}));
+      s.append(el("text",{x:m.l-8,y:y(v)+4,"text-anchor":"end"},fmt(v,1)))}
+    s.append(el("text",{x:14,y:m.t+ih/2,"text-anchor":"middle",transform:`rotate(-90 14 ${m.t+ih/2})`,style:"fill:var(--ink-2)"},"Nivel de impacto"));
+    data.forEach((d,i)=>{const cx=x(i),cy=y(d[2]);
+      s.append(el("line",{x1:cx,x2:cx,y1:m.t,y2:m.t+ih,stroke:"var(--grid)","stroke-width":1}));
+      const c=el("circle",{class:"mark",cx,cy,r:d[3],fill:d[4],"fill-opacity":.9,stroke:"var(--surface)","stroke-width":2});
+      hover(c,`${d[0]} ${d[1]}: nivel de impacto ${fmt(d[2],1)} · ${d[6].join(" ")}`);s.append(c);
+      const n=d[6].length;d[6].forEach((t,k)=>s.append(el("text",{x:cx,y:cy+(k-(n-1)/2)*16+4,"text-anchor":"middle",
+        style:`fill:${d[5]};font-family:'Figtree',sans-serif;font-weight:600;font-size:13px;pointer-events:none`},t)));
+      s.append(el("text",{class:"cat",x:cx,y:H-28,"text-anchor":"middle",style:"font-weight:600"},d[0]));
+      if(d[1])s.append(el("text",{class:"cat",x:cx,y:H-10,"text-anchor":"middle",style:"font-weight:600"},d[1]))});
+    document.getElementById("c-factors").append(s);
+  })();
+})();
+</script>
