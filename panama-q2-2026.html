@@ -66,7 +66,8 @@ h1,h2,h3{font-family:"Bricolage Grotesque","Figtree",system-ui,sans-serif;text-w
 /* Sections */
 section{margin-top:56px}
 .sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:20px}
-.sec-head h2{font-size:clamp(22px,2.6vw,28px);font-weight:700}
+.sec-head h2{font-size:clamp(26px,3.2vw,34px);font-weight:700;display:flex;align-items:baseline;gap:14px}
+.sec-n{font:600 .6em/1 "Bricolage Grotesque",sans-serif;color:var(--bar);letter-spacing:.02em;flex:none}
 .fig{font:500 12px/1 "Figtree",system-ui,sans-serif;color:var(--muted)}
 .lead{color:var(--ink-2);max-width:68ch;margin:0 0 20px}
 .grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start}
@@ -186,7 +187,7 @@ tr.hi td{font-weight:600}
 
   <!-- Desempeño acumulado + Gráfico 1 -->
   <section>
-    <div class="sec-head"><h2>Desempeño acumulado y evolución trimestral</h2></div>
+    <div class="sec-head"><h2><span class="sec-n">01</span>Desempeño acumulado y evolución trimestral</h2></div>
     <p class="lead">El desempeño económico de 2026 hasta septiembre refleja una tendencia al alza consistente:</p>
     <div class="grid2">
       <div class="panel">
@@ -210,7 +211,7 @@ tr.hi td{font-weight:600}
 
   <!-- Motores -->
   <section>
-    <div class="sec-head"><h2>Motores del crecimiento económico</h2></div>
+    <div class="sec-head"><h2><span class="sec-n">02</span>Motores del crecimiento económico</h2></div>
     <p class="lead">El crecimiento de 6,4% en Q2 2026 fue impulsado por cuatro actividades económicas estratégicas que duplican o exceden la tasa nacional, reflejando la diversificación de la economía panameña más allá de la infraestructura del Canal.</p>
 
     <div class="sector">
@@ -264,7 +265,7 @@ tr.hi td{font-weight:600}
 
   <!-- Factores + Gráfico 4 -->
   <section>
-    <div class="sec-head"><h2>Factores estructurales del crecimiento</h2></div>
+    <div class="sec-head"><h2><span class="sec-n">03</span>Factores estructurales del crecimiento</h2></div>
     <p class="lead">El desempeño económico acelerado responde a una confluencia de factores internos y externos favorables:</p>
     <div class="factors">
       <div class="factor"><span class="tag">Logística</span><h3>Recuperación logística regional</h3><div class="v num">+17%</div><div class="vl">ingresos</div><p>Canal, puertos, Tocumén y transporte con capacidades elevadas. +5,2% tránsitos, +17% ingresos ($4,802M/9 meses).</p></div>
@@ -282,7 +283,7 @@ tr.hi td{font-weight:600}
 
   <!-- Síntesis + Gráfico 5 -->
   <section>
-    <div class="sec-head"><h2>Síntesis de indicadores clave</h2><span class="fig">Gráfico 5: Dashboard de indicadores clave 2026</span></div>
+    <div class="sec-head"><h2><span class="sec-n">04</span>Síntesis de indicadores clave</h2><span class="fig">Gráfico 5: Dashboard de indicadores clave 2026</span></div>
     <ul class="synth">
       <li><b>PIB Q2 2026:</b> 6,4% interanual</li>
       <li>Aceleración impulsada por Canal (+5,2% tránsitos, +17% ingresos), Logística (+12,8%), Comercio (+11,6%), Agricultura (+9,6%)</li>
