@@ -323,7 +323,7 @@ tr.hi td{font-weight:600}
 <script>
 (function(){
   const NS="http://www.w3.org/2000/svg";
-  const fmt=(v,d)=>v.toLocaleString("es-PA",{minimumFractionDigits:d??1,maximumFractionDigits:d??2});
+  const fmt=(v,d)=>v.toLocaleString("es-ES",{minimumFractionDigits:d??1,maximumFractionDigits:d??2});
   const el=(n,a,t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e};
   const tip=document.getElementById("tip");
   function hover(node,text){
@@ -433,5 +433,81 @@ tr.hi td{font-weight:600}
       if(d[1])s.append(el("text",{class:"cat",x:cx,y:H-10,"text-anchor":"middle",style:"font-weight:600"},d[1]))});
     document.getElementById("c-factors").append(s);
   })();
+  // ===== Animaciones: gráficos al entrar en pantalla + cifras como contador =====
+  (function(){
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window) || !Element.prototype.animate) return;
+    // si la página carga oculta (pestaña de fondo, vista previa), todo queda en su estado final hasta que se vea
+    if(document.visibilityState!=="visible"){document.addEventListener("visibilitychange",function h(){if(document.visibilityState==="visible"){document.removeEventListener("visibilitychange",h);init()}});return}
+    init();
+    function init(){
+    const EASE="cubic-bezier(.22,1,.36,1)", POP="cubic-bezier(.34,1.56,.64,1)";
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);e.target.__play();}}),{threshold:.3});
+    const watch=(el,prep,play)=>{prep();el.__play=play;io.observe(el)};
+
+    // --- contador ---
+    function parse(s){
+      const m=s.match(/\d[\d.,]*\d|\d/); if(!m) return null;
+      const raw=m[0]; if(raw.includes(",")&&raw.includes(".")) return null;
+      const sep=raw.includes(",")?",":raw.includes(".")?".":"";
+      let val,dec=0,thou="",dsep=sep;
+      if(sep&&raw.split(sep).pop().length===3){thou=sep;dsep="";val=+raw.split(sep).join("")}
+      else if(sep){dec=raw.split(sep)[1].length;val=+raw.replace(sep,".")}
+      else val=+raw;
+      return {pre:s.slice(0,m.index),post:s.slice(m.index+raw.length),val,dec,thou,dsep};
+    }
+    function fmtN(v,p){
+      let [i,d]=v.toFixed(p.dec).split(".");
+      if(p.thou) i=i.replace(/\B(?=(\d{3})+(?!\d))/g,p.thou);
+      return p.pre+i+(d?p.dsep+d:"")+p.post;
+    }
+    function textNode(el){const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode())if(/\d/.test(n.nodeValue))return n;return null}
+    function counter(el){
+      const n=textNode(el); if(!n) return null; const orig=n.nodeValue, p=parse(orig); if(!p) return null;
+      return {zero(){n.nodeValue=fmtN(0,p)},run(delay=0,dur=1400){setTimeout(()=>{const t0=performance.now();
+        (function f(now){const k=Math.min(1,Math.max(0,(now-t0)/dur)),e=1-Math.pow(1-k,3);n.nodeValue=k<1?fmtN(p.val*e,p):orig;if(k<1)requestAnimationFrame(f)})(t0);setTimeout(()=>{n.nodeValue=orig},dur+120)},delay)}};
+    }
+    document.querySelectorAll(".big .n, .kpi .v, .tile .v, .factor .v, .sector-head .pct").forEach(el=>{
+      const c=counter(el); if(c) watch(el,()=>c.zero(),()=>c.run());
+    });
+
+    // --- utilidades SVG ---
+    const hide=(els,t)=>els.forEach(e=>{e.style.opacity=0;if(t){e.style.transformBox="fill-box";e.style.transformOrigin=t.o;e.style.transform=t.from}});
+    const show=(e,delay,dur,frames,easing=EASE)=>{e.style.opacity="";e.style.transform="";e.animate(frames,{duration:dur,delay,easing,fill:"backwards"})};
+    const fade=(e,delay,dur=500)=>show(e,delay,dur,[{opacity:0},{opacity:1}]);
+
+    // Gráfico 1: la línea se dibuja, el área aparece y los puntos saltan en orden
+    (function(){
+      const svg=document.querySelector("#c-accel svg"); if(!svg) return;
+      const area=svg.querySelector('path[fill="var(--area)"]'), line=svg.querySelector('path[fill="none"]');
+      const dots=[...svg.querySelectorAll("circle.mark")], labels=[...svg.querySelectorAll("text.vlabel")], cs=labels.map(counter);
+      const len=line.getTotalLength(), D=1300;
+      watch(svg,()=>{hide([area]);hide(dots,{o:"center",from:"scale(0)"});hide(labels);cs.forEach(c=>c&&c.zero());
+          line.style.strokeDasharray=len;line.style.strokeDashoffset=len},
+        ()=>{line.style.strokeDashoffset=0;line.animate([{strokeDashoffset:len},{strokeDashoffset:0}],{duration:D,easing:"cubic-bezier(.45,0,.25,1)"});
+          fade(area,150,D);
+          dots.forEach((d,i)=>{const t=i/(dots.length-1)*D*.9;show(d,t,450,[{opacity:0,transform:"scale(0)"},{opacity:1,transform:"scale(1)"}],POP);fade(labels[i],t,400);cs[i]&&cs[i].run(t,700)})});
+    })();
+
+    // Gráficos 2 y 3: las barras crecen desde el eje
+    ["#c-canal svg","#c-sectors svg"].forEach(sel=>{
+      const svg=document.querySelector(sel); if(!svg) return;
+      const bars=[...svg.querySelectorAll("path.mark")], vl=[...svg.querySelectorAll("text.vlabel")], cs=vl.map(counter);
+      const extra=[...svg.querySelectorAll("text")].filter(t=>/italic|fill:var\(--bar-hi\)/.test(t.getAttribute("style")||""));
+      watch(svg,()=>{hide(bars,{o:"left center",from:"scaleX(0)"});hide(vl);hide(extra);cs.forEach(c=>c&&c.zero())},
+        ()=>bars.forEach((b,i)=>{const t=i*110;show(b,t,900,[{opacity:1,transform:"scaleX(0)"},{opacity:1,transform:"scaleX(1)"}]);
+          if(vl[i]){fade(vl[i],t+150);cs[i]&&cs[i].run(t+150,900)}}) || extra.forEach(e=>fade(e,bars.length*110+600)));
+    });
+
+    // Gráfico 4: las burbujas aparecen con rebote, luego su texto
+    (function(){
+      const svg=document.querySelector("#c-factors svg"); if(!svg) return;
+      const bubs=[...svg.querySelectorAll("circle.mark")], txt=[...svg.querySelectorAll("text")].filter(t=>/pointer-events:none/.test(t.getAttribute("style")||""));
+      watch(svg,()=>{hide(bubs,{o:"center",from:"scale(0)"});hide(txt)},
+        ()=>{bubs.forEach((b,i)=>show(b,i*160,750,[{opacity:0,transform:"scale(0)"},{opacity:1,transform:"scale(1)"}],POP));
+          txt.forEach(t=>{const cx=+t.getAttribute("x"),i=bubs.findIndex(b=>+b.getAttribute("cx")===cx);fade(t,Math.max(0,i)*160+550)})});
+    })();
+    }
+  })();
+
 })();
 </script>
